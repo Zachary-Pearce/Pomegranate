@@ -20,7 +20,7 @@ Pomegranate as a whole cannot be rated on compatibility as it depends on individ
 | Kintex 7 | AMD Xilinx | Untested |
 | Virtex 7 | AMD Xilinx | Minor changes |
 
-Note that even though all the components used may be compatible with a particular family, minor changes may still need to be made when all the components are stitched together.
+Note that even though all the components used may be compatible with a particular family, minor changes may still need to be made when they are stitched together.
 
 ## Change Log
 See the [Releases](https://github.com/Zachary-Pearce/Pomegranate/releases/) page. I will also post discoveries and major changes on my [LinkedIn](https://www.linkedin.com/in/zachary-pearce-231307243/).
