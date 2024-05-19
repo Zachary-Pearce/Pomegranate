@@ -8,10 +8,10 @@ Pomegranate is also made to be source-level portable, any form of Pomegranate sh
 ## Base Architecture
 
 ## Development
-I don't really know how this whole contribution is going to work yet to be honest with you.
+I don't really know how this whole contribution thing is going to work yet to be honest with you.
 
 ## Compatible Platforms
-Pomegranate as a whole cannot be rated on compatibility as it depends on individual deployments, however each components portability is noted through successful synthesis and implementation, comments are also given describing errors and their severity.
+Pomegranate as a whole cannot be rated on compatibility as it depends on individual deployments. However, each components portability is noted through successful synthesis and implementation, comments are also given describing errors and their severity.
 
 | Family | Vendor | Synthesis Sucessful? (Y/N) | Implementation Successful? (Y/N) | Comments |
 | --- | --- | --- | --- | --- |
