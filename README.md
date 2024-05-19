@@ -13,7 +13,7 @@ I don't really know how this whole contribution is going to work yet to be hones
 ## Compatible Platforms
 Pomegranate as a whole cannot be rated on compatibility as it depends on individual deployments, however each components portability is noted through successful synthesis and implementation, comments are also given describing errors and their severity.
 
-| Family | Vendor | Synthesis Sucessful? | Implementation Successful? | Comments |
+| Family | Vendor | Synthesis Sucessful? (Y/N) | Implementation Successful? (Y/N) | Comments |
 | --- | --- | --- | --- | --- |
 | Zynq 7000 | AMD Xilinx | Y | Y | Failed timing report (critical warning) |
 | Spartan 7 | AMD Xilinx | Y | Y | No errors |
