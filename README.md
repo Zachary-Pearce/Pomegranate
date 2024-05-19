@@ -8,17 +8,18 @@ Pomegranate is also made to be source-level portable, any form of Pomegranate sh
 ## Base Architecture
 
 ## Development
+I don't really know how this whole contribution is going to work yet to be honest with you.
 
 ## Compatible Platforms
-Pomegranate as a whole cannot be rated on compatibility as it depends on individual deployments, however each components portability is noted by giving each FPGA family a compatibility rating where <span color="red">Major changes</span>, <span color="orange">Minor changes</span>, or <span>no changes</span> are required.
+Pomegranate as a whole cannot be rated on compatibility as it depends on individual deployments, however each components portability is noted through successful synthesis and implementation, comments are also given describing errors and their severity.
 
-| Family | Vendor | Compatibility Rating |
-| --- | --- | --- |
-| Zynq 7000 | AMD Xilinx | Major changes |
-| Spartan 7 | AMD Xilinx | No changes |
-| Artix 7 | AMD Xilinx | No changes |
-| Kintex 7 | AMD Xilinx | Untested |
-| Virtex 7 | AMD Xilinx | Minor changes |
+| Family | Vendor | Synthesis Sucessful? | Implementation Successful? | Comments |
+| --- | --- | --- | --- | --- |
+| Zynq 7000 | AMD Xilinx | Y | Y | Failed timing report (critical warning) |
+| Spartan 7 | AMD Xilinx | Y | Y | No errors |
+| Artix 7 | AMD Xilinx | Y | Y | No errors |
+| Kintex 7 | AMD Xilinx | Untested | Untested | NA |
+| Virtex 7 | AMD Xilinx | Y | N | Conflicting voltages in bank 17 (error) |
 
 Note that even though all the components used may be compatible with a particular family, minor changes may still need to be made when they are stitched together.
 
