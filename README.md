@@ -11,15 +11,15 @@ I don't really know how this whole contribution thing is going to work yet to be
 ## Compatible Platforms
 Pomegranate as a whole cannot be rated on compatibility as it depends on individual deployments. However, each components portability is noted through successful synthesis and implementation, comments are also given describing errors and their severity.
 
-| Family | Vendor | Synthesis Sucessful? (Y/N) | Implementation Successful? (Y/N) | Comments |
+| Family | Vendor | Synthesized? (P/F) | Implemented? (P/F) | Comments |
 | --- | --- | :---: | :---: | --- |
-| Zynq 7000 | AMD Xilinx | Y | Y | Failed timing report (critical warning) |
-| Spartan 7 | AMD Xilinx | Y | Y | No errors |
-| Artix 7 | AMD Xilinx | Y | Y | No errors |
+| Zynq 7000 | AMD Xilinx | P | P | Failed timing report (critical warning) |
+| Spartan 7 | AMD Xilinx | P | P | No errors |
+| Artix 7 | AMD Xilinx | P | P | No errors |
 | Kintex 7 | AMD Xilinx | Untested | Untested | NA |
-| Virtex 7 | AMD Xilinx | Y | N | Conflicting voltages in bank 17 (error) |
+| Virtex 7 | AMD Xilinx | P | F | Conflicting voltages in bank 17 (error) |
 
-Note that even though all the components used may be compatible with a particular family, minor changes may still need to be made when they are stitched together.
+Note that even though all the components used may be compatible with a particular family, minor changes may still need to be made when they are stitched together in your final deployment.
 
 ## Change Log
 See the [Releases](https://github.com/Zachary-Pearce/Pomegranate/releases/) page. I will also post discoveries and major changes on my [LinkedIn](https://www.linkedin.com/in/zachary-pearce-231307243/).
