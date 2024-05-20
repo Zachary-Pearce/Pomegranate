@@ -5,8 +5,6 @@ Pomegranate is made up of several computational elements. These can be removed, 
 
 Pomegranate is also made to be source-level portable, any form of Pomegranate should be synthesisable on different FPGA platforms with little to no required changes. For the moment, portability is focused on Xilinx family chips.
 
-## Base Architecture
-
 ## Development
 I don't really know how this whole contribution thing is going to work yet to be honest with you.
 
