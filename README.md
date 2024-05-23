@@ -5,7 +5,7 @@ Choosing a processor for an embedded system is a delicate balancing act between 
 
 To make Pomegranate configurable, the system is designed to be scalable so computational elements can be removed, added, or modified wihout harming the synthesisability of the architecture. In order for Pomegranate to be accessible it is designed to be source-level portable, this meaning that any form of Pomegranate should be synthesisable on different FPGA platforms with little to no required changes.
 
-Portability is currently focussed on Xilinx family chips.
+Portability is currently focused on Xilinx family chips.
 
 ## Development
 I don't really know how this whole contribution thing is going to work yet to be honest with you.
