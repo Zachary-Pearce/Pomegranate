@@ -1,15 +1,17 @@
 # Pomegranate
-Pomegranate is an open source soft-core processor developed using VHDL. The goal of pomegranate is to provide an accessible and highly configurable processor design that can be used in a variety of projects, with a focus on FGPA projects.
+Pomegranate is an open source soft-core processor written in VHDL. The goal of pomegranate is to provide an accessible and highly configurable processor architecture that can be used in a variety of FPGA projects.
 
-Pomegranate is made up of several computational elements. These can be removed, added, or modified as the designer wishes to best fit the application. While Pomegranate is presented with a "base architecture" (see below) this isn't what defines Pomegranate, what defines it is the way that the modules are designed to best support scalability.
+Choosing a processor for an embedded system is a delicate balancing act between flexibility and performance. Pomegranate exists to provide an architecture with performance that can be easily reconfigured in the future.
 
-Pomegranate is also made to be source-level portable, any form of Pomegranate should be synthesisable on different FPGA platforms with little to no required changes. For the moment, portability is focused on Xilinx family chips.
+To make Pomegranate configurable, the system is designed to be scalable so computational elements can be removed, added, or modified wihout harming the synthesisability of the architecture. In order for Pomegranate to be accessible it is designed to be source-level portable, this meaning that any form of Pomegranate should be synthesisable on different FPGA platforms with little to no required changes.
+
+Portability is currently focussed on Xilinx family chips.
 
 ## Development
 I don't really know how this whole contribution thing is going to work yet to be honest with you.
 
 ## Compatible Platforms
-Pomegranate as a whole cannot be rated on compatibility as it depends on individual deployments. However, each components portability is noted through successful synthesis and implementation, comments are also given describing errors and their severity.
+Pomegranate as a whole cannot be rated on compatibility as it depends on the specific implementation. However, each components portability is noted through successful synthesis and implementation, comments are also given describing errors and their severity.
 
 | Family | Vendor | Synthesized? (P/F) | Implemented? (P/F) | Comments |
 | --- | --- | :---: | :---: | --- |
