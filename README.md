@@ -22,4 +22,4 @@ Pomegranate as a whole cannot be rated on compatibility as it depends on individ
 Note that even though all the components used may be compatible with a particular family, minor changes may still need to be made when they are stitched together in your final deployment.
 
 ## Change Log
-See the [Releases](https://github.com/Zachary-Pearce/Pomegranate/releases/) page. I will also post discoveries and major changes on my [LinkedIn](https://www.linkedin.com/in/zachary-pearce-231307243/).
+See the [Releases](https://github.com/Zachary-Pearce/Pomegranate/releases/) page. I also post about interesting discoveries and major changes on my [LinkedIn](https://www.linkedin.com/in/zachary-pearce-231307243/).
