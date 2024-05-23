@@ -7,6 +7,8 @@ To make Pomegranate configurable, the system is designed to be scalable so compu
 
 Portability is currently focused on Xilinx family chips.
 
+test
+
 ## Development
 I don't really know how this whole contribution thing is going to work yet to be honest with you.
 
