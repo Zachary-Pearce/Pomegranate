@@ -1,1 +1,26 @@
-# I need to research how this works more, very unsure at the moment
+* text eol=lf
+
+# the above handles all files not found below
+# https://github.com/Danimoth/gitattributes (for reference)
+
+
+# these files are text and should be normalised
+*.bash  text eol=lf
+*.sh    tetx eol=lf
+*.c     text diff=c
+*.h     text diff=c
+
+# these are compiled object files
+*.slo   binary
+*.lo    binary
+*.o     binary
+*.obj   binary
+*.bin   binary
+
+#graphics
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+
+# executables
+*.exe   binary
