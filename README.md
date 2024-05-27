@@ -12,7 +12,16 @@ Choosing a processor for an embedded system is a delicate balancing act between 
 
 Pomegranate is an open source soft-core processor written in VHDL. The goal of Pomegranate is to provide an accessible and easy to configure processor core that can be used in a varierty of embedded systems.
 
-## Contribution
+# Getting Started
+You can start by familiarising yourself with the wiki which covers:
+- Link 1 (Pomegranate's mission, and how it seeks to achieve it)
+- Link 2 (architecture details; instruction set, base architecture)
+- Link 3 (configuring Pomegranate)
+- Link 4 (programming Pomegranate)
+
+# Contribution
+Please read the [contribution guide](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting, this will cover what needs to be provided in a contribution, if a pull request is missing any of the requirements it will be automatically declined.
+
 Some notes regarding contribution below, write these up nicely:
 
 provide a readme file explaining the module created, it's design choices, and any applicable standards. We will add a link to the relevant folder under tests when it is pushed to the repo.
@@ -22,7 +31,7 @@ provide a readme with the testbench file for the module that shows simulation re
 - utilisation graphs for at least one compatible platform.
 - please provide a table of tested and compatible platforms, we ask that at least all xilinx chips are used for testing, not all of these have to be made compatible if you find it difficult. However, you may make your module compatible with more platforms if you wish however these platforms must be stated.
 
-## Compatible Platforms
+# Compatible Platforms
 Pomegranate as a whole cannot be rated on compatibility as it depends on the specific implementation. However, each components portability is noted through successful synthesis and implementation, comments are also given describing errors and their severity.
 
 | Family | Vendor | Synthesized? (P/F) | Implemented? (P/F) | Comments |
@@ -35,5 +44,5 @@ Pomegranate as a whole cannot be rated on compatibility as it depends on the spe
 
 Note that even though all the components used may be compatible with a particular family, minor changes may still need to be made when they are stitched together in your final deployment.
 
-## Change Log
+# Change Log
 See the [Releases](https://github.com/Zachary-Pearce/Pomegranate/releases/) page. I also post about interesting discoveries and major changes on my [LinkedIn](https://www.linkedin.com/in/zachary-pearce-231307243/).
