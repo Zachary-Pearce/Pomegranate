@@ -1,14 +1,26 @@
+the readme guidlines on the github page says this is the typical structure:
+- how users can get started with the project
+- where users can get help with your project
+- who maintains and contributes to the project
+
+however for our purposes we could get away without saying who maintains the project and most of the information like "where users can get help with your project" can mostly be covered by the code of conduct and with other contribution information such as a section that just says something like "if you need help regarding a change or clarification please open an issue with the following tag...".
+
+I REALLY wish we could get a logo for the top of the readme rather than having an ugly title at the top that just looks a bit cramped in my opinion. I can definitely use blender to make one.
+
 # Pomegranate
-Pomegranate is an open source soft-core processor written in VHDL. The goal of pomegranate is to provide an accessible and highly configurable processor architecture that can be used in a variety of FPGA projects.
+Choosing a processor for an embedded system is a delicate balancing act between flexibility and performance, however if a reconfigurable processor core was available and accessible then the cost of designing such systems would decrease as an existing design could be easily modified to fit an applcation and changed in the future if needs change.
 
-Choosing a processor for an embedded system is a delicate balancing act between flexibility and performance. Pomegranate exists to provide an architecture with performance that can be easily reconfigured in the future.
+Pomegranate is an open source soft-core processor written in VHDL. The goal of Pomegranate is to provide an accessible and easy to configure processor core that can be used in a varierty of FPGA projects.
 
-To make Pomegranate configurable, the system is designed to be scalable so computational elements can be removed, added, or modified wihout harming the synthesisability of the architecture. In order for Pomegranate to be accessible it is designed to be source-level portable, this meaning that any form of Pomegranate should be synthesisable on different FPGA platforms with little to no required changes.
+## Contribution
+Some notes regarding contribution below, write these up nicely:
 
-Portability is currently focused on Xilinx family chips.
+provide a readme file explaining the module created, it's design choices, and any applicable standards. We will add a link to the relevant folder under tests when it is pushed to the repo.
 
-## Development
-I don't really know how this whole contribution thing is going to work yet to be honest with you.
+provide a readme with the testbench file for the module that shows simulation results, this includes:
+- simulation waveforms.
+- utilisation graphs for at least one compatible platform.
+- please provide a table of tested and compatible platforms, we ask that at least all xilinx chips are used for testing, not all of these have to be made compatible if you find it difficult. However, you may make your module compatible with more platforms if you wish however these platforms must be stated.
 
 ## Compatible Platforms
 Pomegranate as a whole cannot be rated on compatibility as it depends on the specific implementation. However, each components portability is noted through successful synthesis and implementation, comments are also given describing errors and their severity.
