@@ -13,7 +13,7 @@ You can start by familiarising yourself with the wiki which covers:
 - Link 4 (programming Pomegranate)
 
 # Contribution
-Please read the [contribution guide](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting, this will cover what needs to be provided in a contribution, if a pull request is missing any of the requirements it will be automatically declined.
+Please read the [contribution guidelines](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting, this will cover what needs to be provided in a contribution, if a pull request is missing any of the requirements it will be automatically declined.
 
 # Compatible Platforms
 Pomegranate as a whole cannot be rated on compatibility as it depends on the specific implementation. However, each components portability is noted through successful synthesis and implementation, comments are also given describing errors and their severity.
