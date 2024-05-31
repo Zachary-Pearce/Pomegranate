@@ -1,6 +1,4 @@
-I REALLY wish we could get a logo for the top of the readme rather than having an ugly title at the top that just looks a bit cramped in my opinion. I can definitely use blender to make one.
-
-# Pomegranate
+![Pomegranate](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/TempLogo.png)
 Choosing a processor for an embedded system is a delicate balancing act between flexibility and performance, however if a reconfigurable processor core was available and accessible then the cost of designing such systems would decrease as an existing design could be easily modified to fit an applcation and changed in the future if needs change.
 
 Pomegranate is an open source soft-core processor written in VHDL. The goal of Pomegranate is to provide an accessible and easy to configure processor core that can be used in a varierty of embedded systems.
