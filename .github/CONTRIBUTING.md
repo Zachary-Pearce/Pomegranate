@@ -1,16 +1,16 @@
-Thank you for your interesting in contributing to Pomegranate, this document describes how you should contribute; documentation, modules, and optimisations so that you can maximise the chance of your pull request being accepted.
+Thank you for your interest in contributing to Pomegranate, this document describes how you should contribute; documentation, modules, and optimisations so that you can maximise the chance of your pull request being accepted.
 
 # Getting Started
 A deployment of Pomegranate will be made up of multiple computational elements (or modules), this repository serves as a collection of these modules and provides a framework to connect them. If you are contributing a module then it is important to first read the wiki.
 
 If you are contributing optimisations to an existing element then it is important to also read the README supplied with it in order to familiarise yourself with it's function and design decisions.
 
-If there are multiple contributions you wish to make, we would prefer that these are sent in separate pull requests, for example a pull request that contributes optimisations to multiple modules will be denied.
+If there are multiple contributions you wish to make, we ask that these are sent in separate pull requests, for example a pull request that contributes optimisations to multiple modules will be denied.
 
 ## Development Environment
-Preferably Vivado so that the utilisation graphs and statistics are laid out in a similar format, but there is no reason why people couldn't use another IDE in reality.
+This repository works on pull requests, so please create a fork of the repository and clone your fork, you can then work from this and submit a pull request when you're ready to do so.
 
-The only other step would be to create a new branch and clone to get the code locally and ready for changes.
+We would prefer that you use Vivado to simulate your designs as this will keep utilisation graphs and error in a similar format. You can download the latest version of the Vivado design suite [here](https://www.xilinx.com/products/design-tools/vivado.html).
 
 # Contributing Modules
 When contributing modules it is important that others can understand what the module is doing and why it is doing it. For this reason, A module of your own design must be accompanied by a README that includes the following:
@@ -24,7 +24,8 @@ Following on from the last point, it is important that any testbench files used 
 Testbench files must also be accompanied with a README that shows simulation results, this should include:
 - Simulation waveforms.
 - Utilisation graphs for at least one compatible platform.
-- A table of tested and comptatible platforms.
+- Timing reports.
+- A table of tested and compatible platforms.
 
 ## Tested and Compatible Platforms
 Tested and compatible platforms should be provided in a table with the following format.
@@ -37,12 +38,14 @@ Tested and compatible platforms should be provided in a table with the following
 | Kintex 7 | AMD Xilinx | Untested | Untested | NA |
 | Virtex 7 | AMD Xilinx | P | F | Conflicting voltages in bank 17 (error) |
 
-The compatibility of a module with a platform is noted through successful synthesis and implementation, comments are also given that describes any errors or critical warnings in the event that synthesis or implemenation fails.
+The compatibility of a module with a platform is noted through successful synthesis and implementation, comments are also given that describes any errors or critical warnings returned after synthesis and implementation.
 
-We ask that that the 5 Xilinx chips given in the above table are tested. However, not all of these have to be compatible if you experience difficulties. You may test with/make compatible more however platforms must be stated in the table.
+We ask that that the 5 Xilinx chips given in the above table are tested. However, not all of these have to be compatible if you experience difficulties. You may test with/make compatible more platforms but these must be stated.
 
 # Contributing Optimisations
-Unlike with contributing new modules, making optimisations require no extra files and there should be no changes to the documentation, we only ask that you follow the relevant pull request template and update any relevant test documentation, commonly the utilisation graphs.
+Optimisations refer to small changes to an existing module in the repository, this could be optimisations that simplify code, reduce delay, or reduce resource utilisation. Optimisations should not change the core of the design and as such remain consistent with it's original documentation. The number one rule for any modification is that it must be justifiable and backed up with results.
+
+Unlike with contributing new modules, making optimisations require no extra files, we only ask that you follow the relevant pull request template and update any relevant test documentation such as utilisation graphs .
 
 # Where to Get Help
 Not really sure on what to write here, but here are the notes I made on it...
