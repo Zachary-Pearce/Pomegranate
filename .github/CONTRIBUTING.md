@@ -45,7 +45,7 @@ We ask that that the 5 Xilinx chips given in the above table are tested. However
 # Contributing Optimisations
 Optimisations refer to small changes to an existing module in the repository, this could be optimisations that simplify code, reduce delay, reduce resource utilisation, or improve compatibility. Optimisations should not change the core of the design and as such remain consistent with it's original documentation.
 
-Before making optimisations it's important that you can justify the change, make sure you are solving a problem rather than finding a problem to solve. Once you have made your optimisations, you must present notable improvements in your pull request which back up your justification. Please also update the test documentation (e.g. Utilisation graphs) with any new results.
+Before making optimisations it's important that you can justify the change, make sure you are solving a problem rather than finding a problem to solve. Once you have made your optimisations, you must present notable improvements in your pull request which backs up your justification. Please also update the test documentation (e.g. Utilisation graphs) with any new results.
 
 As such, an optimisation pull request must include the following:
 - Problem justification.
