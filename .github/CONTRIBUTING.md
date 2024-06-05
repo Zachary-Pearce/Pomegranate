@@ -17,7 +17,7 @@ When contributing modules it is important that others can understand what the mo
 - An explanation of the modules function and it's application(s).
 - An explanation of any design choices.
 - Any standards that were followed during the design process.
-- A link to the testing files at the end of the document
+- A link to the testing files at the end of the document.
 
 Following on from the last point, it is important that any testbench files used are contributed in the same pull request in a folder under "testing" with the same name as the folder that holds the design files. (Add an exaplanation image here)
 
@@ -38,14 +38,14 @@ Tested and compatible platforms should be provided in a table with the following
 | Kintex 7 | AMD Xilinx | Untested | Untested | NA |
 | Virtex 7 | AMD Xilinx | P | F | Conflicting voltages in bank 17 (error) |
 
-The compatibility of a module with a platform is noted through successful synthesis and implementation, comments are also given that describes any errors or critical warnings returned after synthesis and implementation.
+The compatibility of a module with a platform is noted through successful synthesis and implementation, comments are also given that describe any errors or critical warnings returned after synthesis and implementation.
 
 We ask that that the 5 Xilinx chips given in the above table are tested. However, not all of these have to be compatible if you experience difficulties. You may test with/make compatible more platforms but these must be stated.
 
 # Contributing Optimisations
-Optimisations refer to small changes to an existing module in the repository, this could be optimisations that simplify code, reduce delay, or reduce resource utilisation. Optimisations should not change the core of the design and as such remain consistent with it's original documentation.
+Optimisations refer to small changes to an existing module in the repository, this could be optimisations that simplify code, reduce delay, reduce resource utilisation, or improve compatibility. Optimisations should not change the core of the design and as such remain consistent with it's original documentation.
 
-Before making optimisations it's important that you can justify the change, make sure you are solving a problem rather than finding a problem to solve. Once you have made your optimisations, you must present notable improvements in your pull request which back up your justification and upate the test documentation accordingly.
+Before making optimisations it's important that you can justify the change, make sure you are solving a problem rather than finding a problem to solve. Once you have made your optimisations, you must present notable improvements in your pull request which back up your justification. Please also update the test documentation (e.g. Utilisation graphs) with any new results.
 
 As such, an optimisation pull request must include the following:
 - Problem justification.
