@@ -5,7 +5,7 @@ A deployment of Pomegranate will be made up of multiple computational elements (
 
 If you are contributing optimisations to an existing element then it is important to also read the README supplied with it in order to familiarise yourself with it's function and design decisions.
 
-If there are multiple contributions you wish to make, we ask that these are sent in separate pull requests, for example a pull request that contributes optimisations to multiple modules will be denied.
+If there are multiple contributions you wish to make, we ask that these are sent in separate pull requests, a pull request that contributes optimisations to multiple modules will be denied.
 
 ## Development Environment
 This repository works on pull requests, so please create a fork of the repository and clone your fork, you can then work from this and submit a pull request when you're ready to do so.
