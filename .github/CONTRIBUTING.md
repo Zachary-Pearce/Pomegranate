@@ -10,7 +10,7 @@ If there are multiple contributions you wish to make, we ask that these are sent
 ## Development Environment
 This repository works on pull requests, so please create a fork of the repository and clone your fork, you can then work from this and submit a pull request when you're ready to do so.
 
-We would prefer that you use Vivado to simulate your designs as this will keep utilisation graphs and error in a similar format. You can download the latest version of the Vivado design suite [here](https://www.xilinx.com/products/design-tools/vivado.html).
+We would prefer that you use Vivado to simulate your designs as this will keep utilisation graphs and errors in a similar format. You can download the latest version of the Vivado design suite [here](https://www.xilinx.com/products/design-tools/vivado.html).
 
 # Contributing Modules
 When contributing modules it is important that others can understand what the module is doing and why it is doing it. For this reason, A module of your own design must be accompanied by a README that includes the following:
@@ -43,9 +43,14 @@ The compatibility of a module with a platform is noted through successful synthe
 We ask that that the 5 Xilinx chips given in the above table are tested. However, not all of these have to be compatible if you experience difficulties. You may test with/make compatible more platforms but these must be stated.
 
 # Contributing Optimisations
-Optimisations refer to small changes to an existing module in the repository, this could be optimisations that simplify code, reduce delay, or reduce resource utilisation. Optimisations should not change the core of the design and as such remain consistent with it's original documentation. The number one rule for any modification is that it must be justifiable and backed up with results.
+Optimisations refer to small changes to an existing module in the repository, this could be optimisations that simplify code, reduce delay, or reduce resource utilisation. Optimisations should not change the core of the design and as such remain consistent with it's original documentation.
 
-Unlike with contributing new modules, making optimisations require no extra files, we only ask that you follow the relevant pull request template and update any relevant test documentation such as utilisation graphs .
+Before making optimisations it's important that you can justify the change, make sure you are solving a problem rather than finding a problem to solve. Once you have made your optimisations, you must present notable improvements in your pull request which back up your justification and upate the test documentation accordingly.
+
+As such, an optimisation pull request must include the following:
+- Problem justification.
+- Results that show a clear improvement.
+- Updated test documentation, if applicable.
 
 # Where to Get Help
 Not really sure on what to write here, but here are the notes I made on it...
