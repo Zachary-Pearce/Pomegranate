@@ -30,27 +30,34 @@ Testbench files must also be accompanied with a README that shows simulation res
 ## Tested and Compatible Platforms
 Tested and compatible platforms should be provided in a table with the following format.
 
-| Family | Vendor | Synthesized? (P/F) | Implemented? (P/F) | Comments |
+| Family | Vendor | Synthesized? | Implemented? | Comments |
 | --- | --- | :---: | :---: | --- |
-| Zynq 7000 | AMD Xilinx | P | P | Failed timing report (critical warning) |
-| Spartan 7 | AMD Xilinx | P | P | No errors |
-| Artix 7 | AMD Xilinx | P | P | No errors |
-| Kintex 7 | AMD Xilinx | Untested | Untested | NA |
-| Virtex 7 | AMD Xilinx | P | F | Conflicting voltages in bank 17 (error) |
+| Zynq 7000 | AMD Xilinx | :white_check_mark: | :white_check_mark: | Failed timing report (critical warning) |
+| Spartan 7 | AMD Xilinx | :white_check_mark: | :white_check_mark: | No errors |
+| Artix 7 | AMD Xilinx | :white_check_mark: | :white_check_mark: | No errors |
+| Kintex 7 | AMD Xilinx | :grey_question: | :grey_question: | NA |
+| Virtex 7 | AMD Xilinx | :white_check_mark: | :x: | Conflicting voltages in bank 17 (error) |
 
-The compatibility of a module with a platform is noted through successful synthesis and implementation, comments are also given that describe any errors or critical warnings returned after synthesis and implementation.
+The compatibility of a module with a platform is noted through successful synthesis and implementation which is indicated as a pass (:white_check_mark:), fail (:x:), or untested (:grey_question:). Comments are given that describe any errors or critical warnings returned after synthesis and implementation.
 
 We ask that that the 5 Xilinx chips given in the above table are tested. However, not all of these have to be compatible if you experience difficulties. You may test with/make compatible more platforms but these must be stated.
 
-# Contributing Optimisations
-Optimisations refer to small changes to an existing module in the repository, this could be optimisations that simplify code, reduce delay, reduce resource utilisation, or improve compatibility. Optimisations should not change the core of the design and as such remain consistent with it's original documentation.
+You may also note intended future platform compatibility by marking it as untested (:grey_question:) as seen with the "Kintex 7" platform in the example table.
 
-Before making optimisations it's important that you can justify the change, make sure you are solving a problem rather than finding a problem to solve. Once you have made your optimisations, you must present notable improvements in your pull request which backs up your justification. Please also update the test documentation (e.g. Utilisation graphs) with any new results.
+# Contributing Optimisations
+Optimisations refer to small changes to an existing module in the repository, this could be optimisations that simplify code, reduce delay, reduce resource utilisation, or improve compatibility. Optimisations should not change the core of the design and as such remain consistent with the supplied README.
+
+Before making optimisations it's important that you can justify the change, make sure you are solving a problem rather than finding a problem to solve. Once you have made your optimisations, you must present notable improvements in your pull request which backs up your justification. Please also update the test README with any new results (e.g. Utilisation graphs).
 
 As such, an optimisation pull request must include the following:
 - Problem justification.
 - Results that show a clear improvement.
 - Updated test documentation, if applicable.
+
+# Contributing Documentation
+Documentation can refer to a README supplied with a module or its testbench, or wiki pages. We expect most developers to contribute their own documentation with their pull requests. However, we are aware that writing is not every developers forte. It certainly isn't mine.
+
+Therefore we accept improvements to the grammar, spelling, and clarity of any documentation. These improvements must not change the ideas communicated.
 
 # Where to Get Help
 Not really sure on what to write here, but here are the notes I made on it...
