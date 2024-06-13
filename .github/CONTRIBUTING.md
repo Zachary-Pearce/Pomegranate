@@ -38,7 +38,7 @@ Tested and compatible platforms should be provided in a table with the following
 | Kintex 7 | AMD Xilinx | :grey_question: | :grey_question: | NA |
 | Virtex 7 | AMD Xilinx | :white_check_mark: | :x: | Conflicting voltages in bank 17 (error) |
 
-The compatibility of a module with a platform is noted through successful synthesis and implementation which is indicated as a pass (:white_check_mark:), fail (:x:), or untested (:grey_question:). Comments are given that describe any errors or critical warnings returned after synthesis and implementation.
+The compatibility of a module with a platform is noted through successful synthesis and implementation which is indicated as passed :white_check_mark:, failed :x:, or untested :grey_question:. Comments are given that describe any errors or critical warnings returned after synthesis and implementation.
 
 We ask that that the 5 Xilinx chips given in the above table are tested. However, not all of these have to be compatible if you experience difficulties. You may test with/make compatible more platforms but these must be stated.
 
