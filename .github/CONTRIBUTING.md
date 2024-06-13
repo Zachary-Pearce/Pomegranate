@@ -42,7 +42,7 @@ The compatibility of a module with a platform is noted through successful synthe
 
 We ask that that the 5 Xilinx chips given in the above table are tested. However, not all of these have to be compatible if you experience difficulties. You may test with/make compatible more platforms but these must be stated.
 
-You may also note intended future platform compatibility by marking it as untested (:grey_question:) as seen with the "Kintex 7" platform in the example table.
+You may also note intended future platform compatibility by marking it as untested :grey_question: as seen with the "Kintex 7" platform in the example table.
 
 # Contributing Optimisations
 Optimisations refer to small changes to an existing module in the repository, this could be optimisations that simplify code, reduce delay, reduce resource utilisation, or improve compatibility. Optimisations should not change the core of the design and as such remain consistent with the supplied README.
