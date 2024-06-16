@@ -5,7 +5,7 @@ Choosing a processor for an embedded system is a delicate balancing act between 
 Pomegranate is an open source soft-core processor written in VHDL. The goal of Pomegranate is to provide an accessible and easy to configure processor core that can be used in a varierty of embedded systems.
 
 # Welcome
-First of all, welcome to Pomegranate. This project started as my undergraduate thesis, I wanted it to become more than I could make it on my own so I started this repository. The name "Pomegranate" came from a friend, a name I ended up accepting as I felt it fit the project very well. A pomegranate is made up of many seeds and those same seeds can also be used to grow a new pomegranate. In the same way, two processor can be RISC processors but be made of different modules.
+First of all, welcome to Pomegranate. This project started as my undergraduate thesis, I wanted it to become more than I could make it on my own so I started this repository. The name "Pomegranate" came from a friend, a name I ended up accepting as I felt it fit the project very well. A pomegranate is made up of many seeds and those same seeds can also be used to grow a new pomegranate. In the same way, two processors can be RISC processors but be made of different modules.
 
 To get started, I reccomend that you start familiarising yourself with the wiki which covers:
 - Link 1 (Pomegranate's mission, and how it seeks to achieve it)
