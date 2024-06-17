@@ -13,7 +13,11 @@ To get started, I reccomend that you start familiarising yourself with the wiki 
 - Link 3 (configuring Pomegranate)
 - Link 4 (programming Pomegranate)
 
-## What if I don't know VHDL?
+## A Message for Newcomers
+Whether you found this repository because you were looking for VHDL projects or somehow just stumbled across it, don't be intimidated by it. Pomegranate is extremely versatile, it can be used for education just as much as it can be used elsewhere.
+
+If you don't feel like an expert at VHDL, neither was I.
+
 This might be a silly question to answer as most people that stumble upon this repository are likely to be looking for VHDL projects. However, if you happen to stumble upon this repository and appreciate it's vision then don't let the barrier of learning VHDL stop you, Pomegranate itself is a powerful tool but it can also be used to aid education. It is designed so you don't need to be a professional VHDL design engineer to configure it, the best practice is by doing.
 
 If you are in higher education, it's likely you have free access to VHDL books you can learn from, that's exactly what I did to learn VHDL before my undergraduate thesis, I wasn't exactly an expert when I started the project.
