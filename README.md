@@ -18,7 +18,7 @@ Whether you found this repository because you were looking for VHDL projects or 
 
 If you don't feel like an expert at VHDL, neither was I when I started this project, I learnt most of my VHDL in the summer before my undergraduate project started. There are plenty of resources out there to draw from, if you are in higher education you likely have free access to VHDL books (I used this [book](https://www.amazon.co.uk/Digital-System-Design-VHDL-Zwolinski/dp/013039985X) which also has a simple processor example you can follow).
 
-I want to extend this concept to those who are new to processor design, download an existing Pomegranate configuration and read over its documentation, maybe try to experiment with changing the configuration. And if you experience any difficulties, open an issue.
+I want to extend this concept to those who are new to processor design, download an existing Pomegranate configuration and read over its documentation, maybe try to experiment with changing the configuration and if you experience any difficulties, open an issue.
 
 # Contribution
 Please read the [contribution guidelines](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting, as long as these guidlines are followed there is a near 100% chance that your pull request will be accepted.
