@@ -16,14 +16,14 @@ To get started, I reccomend that you start familiarising yourself with the wiki 
 ## A Message for Newcomers
 Whether you found this repository because you were looking for VHDL projects or somehow just stumbled across it, don't be intimidated by it. Pomegranate is extremely versatile, it can be used for education just as much as it can be used elsewhere.
 
-If you don't feel like an expert at VHDL, neither was I when I started this project, I learnt most of my VHDL in the summer before my undergraduate project started. There are plenty of resources out there to draw from, if you are a university student you likely have free access to VHDL books (I used this [book](https://www.amazon.co.uk/Digital-System-Design-VHDL-Zwolinski/dp/013039985X) which also has a simple processor example which you can follow).
+If you don't feel like an expert at VHDL, neither was I when I started this project, I learnt most of my VHDL in the summer before my undergraduate project started. There are plenty of resources out there to draw from, if you are in higher education you likely have free access to VHDL books (I used this [book](https://www.amazon.co.uk/Digital-System-Design-VHDL-Zwolinski/dp/013039985X) which also has a simple processor example which you can follow).
 
 I want to also extend this concept to those who are new to processor design, download an existing Pomegranate configuration and read over its documentation, maybe try to experiment with changing the configuration.
 
-No matter what type of newcomer you are, I encourage you to use Pomegranate as a learning tool.
+No matter what type of newcomer you are, I encourage you to use Pomegranate as a learning tool if you need to.
 
 # Contribution
-Please read the [contribution guidelines](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting, this will cover what needs to be provided in a contribution, if a pull request is missing any of the requirements it will be automatically declined. (rewrite this to be more friendly)
+Please read the [contribution guidelines](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting, as long as these guidlines are followed there is a near 100% chance that your pull request will be accepted.
 
 # Change Log
 See the [Releases](https://github.com/Zachary-Pearce/Pomegranate/releases/) page. I also post about interesting discoveries and major changes on my [LinkedIn](https://www.linkedin.com/in/zachary-pearce-231307243/).
