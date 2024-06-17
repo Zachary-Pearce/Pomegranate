@@ -16,13 +16,11 @@ To get started, I reccomend that you start familiarising yourself with the wiki 
 ## A Message for Newcomers
 Whether you found this repository because you were looking for VHDL projects or somehow just stumbled across it, don't be intimidated by it. Pomegranate is extremely versatile, it can be used for education just as much as it can be used elsewhere.
 
-If you don't feel like an expert at VHDL, neither was I.
+If you don't feel like an expert at VHDL, neither was I when I started this project, I learnt most of my VHDL in the summer before my undergraduate project started. There are plenty of resources out there to draw from, if you are a university student you likely have free access to VHDL books (I used this [book](https://www.amazon.co.uk/Digital-System-Design-VHDL-Zwolinski/dp/013039985X) which also has a simple processor example which you can follow).
 
-This might be a silly question to answer as most people that stumble upon this repository are likely to be looking for VHDL projects. However, if you happen to stumble upon this repository and appreciate it's vision then don't let the barrier of learning VHDL stop you, Pomegranate itself is a powerful tool but it can also be used to aid education. It is designed so you don't need to be a professional VHDL design engineer to configure it, the best practice is by doing.
+I want to also extend this concept to those who are new to processor design, download an existing Pomegranate configuration and read over its documentation, maybe try to experiment with changing the configuration.
 
-If you are in higher education, it's likely you have free access to VHDL books you can learn from, that's exactly what I did to learn VHDL before my undergraduate thesis, I wasn't exactly an expert when I started the project.
-
-I want to also extend this concept to those who want to get into designing processors, it may seem like an incredibly complex thing. But like all things, if you break it down, it gets easier. And once again, Pomegranate can be used as an educational tool, so I actively want to encourage newcomers to use this project to learn.
+No matter what type of newcomer you are, I encourage you to use Pomegranate as a learning tool.
 
 # Contribution
 Please read the [contribution guidelines](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting, this will cover what needs to be provided in a contribution, if a pull request is missing any of the requirements it will be automatically declined. (rewrite this to be more friendly)
