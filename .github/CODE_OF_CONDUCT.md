@@ -21,7 +21,8 @@ Please remember to always be:
 10. **T**
 11. **E**
 
-<sub>I ran out of traits. Actually, having 11 rules would be kinda intimidating huh.</sub>
+> <sub>I ran out of traits. Actually, having 11 rules would be kinda intimidating huh.</sub>
+
 Breaking any of the rules above won't necessarily result in an immediate ban, I reserve the right to adjust the consequences based on severity and any past incidents.
 
 # Reporting
