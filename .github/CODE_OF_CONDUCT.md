@@ -26,7 +26,7 @@ Please remember to always be:
 Breaking any of the rules above won't necessarily result in an immediate ban, I reserve the right to adjust the consequences based on severity and any past incidents.
 
 # Reporting
-If you believe that someone is violating the code of conduct please let me (Zach :D) know via email (zachary.pearce25@gmail.com) or another appropriate channel. However, I am more likely to see emails. No matter how you contact me, I must be able to contact you myself if I need further details.
+If you believe that someone is violating the code of conduct please let me (Zach) know via email (zachary.pearce25@gmail.com) or another appropriate channel. However, I am more likely to see emails. No matter how you contact me, I must be able to contact you myself if I need further details.
 
 There are 3 things that I pledge I will do when an incident is reported to me:
 1. Keep you anonymous.
