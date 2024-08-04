@@ -7,13 +7,11 @@ entity regFile is
     generic (
 		--data bus width
 		n: natural := 8;
-		--address bus width
 		a: natural := 8;
-		--register address width
 		k: natural := 1
     );
     port (
-        CLK, ARST, RWE, CMPE, ALU_REGF, REGF_DAT, DAT_REGF: in std_logic;
+		CLK, ARST, RWE, CMPE, ALU_REGF, REGF_DAT, DAT_REGF: in std_logic;
 		z_flag, p_flag: out std_logic;
 		--data bus
 		Ddatabus: inout std_logic_vector(n-1 downto 0);
@@ -25,7 +23,7 @@ entity regFile is
 end entity regFile;
 
 architecture regFileRTL or regFile is
-    --register addresses (source, target, destination)
+	--register adresses (source, target, destination)
 	signal Rs,Rt,Rd: std_logic_vector(k-1 downto 0);
 	signal sIndex, tIndex, dIndex: natural;
 	--register data (source, target, destination)
@@ -34,7 +32,7 @@ architecture regFileRTL or regFile is
 	type regFileArray is array(0 to (2**k)-1) of std_logic_vector(n-1 downto 0);
 	signal registers: regFileArray;
 begin
-    --COMBINATIONAL PART
+	--COMBINATIONAL PART
 	--read the source address
 	sIndex <= AddressIndex(Daddrbus,'s');
 	s <= Daddrbus(sIndex-1 downto sIndex-k);
