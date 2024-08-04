@@ -7,7 +7,9 @@ entity regFile is
     generic (
 		--data bus width
 		n: natural := 8;
+		--adress bus width
 		a: natural := 8;
+		--register address width
 		k: natural := 1
     );
     port (
