@@ -6,7 +6,7 @@ use WORK.cpu_defs.all;
 entity regFile is
     generic (
 		--data bus width
-        n: natural := 8;
+		n: natural := 8;
 		--address bus width
 		a: natural := 8;
 		--register address width
@@ -44,12 +44,12 @@ begin
 	--read the destination address
 	dIndex <= AddressIndex(Daddrbus,'d');
 	d <= Daddrbus(dIndex-1 downto dIndex-k);
-
+	
 	--get the register data
 	sData <= registers(to_integer(unsigned(s)))(n-1 downto 0);
 	tData <= registers(to_integer(unsigned(t)))(n-1 downto 0);
 	dData <= Ddatabus(n-1 downto 0) when REGF_DAT = '1' else (others => '0');
-
+	
 	--SEQUENTIAL PART
 	s0: process(CLK, ARST)
 	begin
@@ -73,7 +73,7 @@ begin
 			end if;
 		end if;
 	end process s0;
-
+	
 	--OUTPUT PART
 	alubus <= (sData & tData) when ALU_REGF = '1' else (others => '0');
 	Ddatabus <= tData when DAT_REGF = '1' else (others => 'Z');
