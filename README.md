@@ -1,5 +1,5 @@
 <p align="center">
-    <image src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png" style="height: 150px;"></image>
+    <image src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png" style="zheight: 250px;"></image>
 </p>
 
 Choosing a processor for an embedded system is a delicate balancing act between flexibility and performance, however if a reconfigurable processor core was available and accessible then the cost of designing such systems would decrease as an existing design could be easily modified to fit an applcation and changed in the future if needs change.
