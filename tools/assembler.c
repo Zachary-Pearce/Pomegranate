@@ -1,2 +1,0 @@
-//this is going to be the assembler that converts the assembly intructions into the binary that goes in the program memory of Pomegranate
-//  C will be used here as this is probably the most compatible platform wise as long as standard C is used
