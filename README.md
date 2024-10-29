@@ -2,6 +2,16 @@
     <image src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png" style="height: 200px;"></image>
 </p>
 
+Open source projects are a great thing, they allow someone to learn from an existing system without spending money on a textbook.
+
+However, the knowledge that informs the design decisions of the author is often locked behind paid sources like research journals and textbooks.
+
+If you are a university student, you are lucky to have access to the majority of technical papers however they are made to show off someones work rather than teach someone the inner workings of a project. Textbooks are more helpful in that they are written to teach, however are often more expensive.
+
+This affects people passionate about a subject by possibly restricting the resources they can use to learn. I became familiar with this concept when I did my undergraduate thesis on microprocessor design, I would often get confused by synonyms I had never seen before and don't get me started on papers that are written for the sake of writing them.
+
+Processor design is a field affected by this concept moreso than others, the majority of designs are closed-source and that are open-source assume you have the fundamental knowledge which isn't always accessible.
+
 Choosing a processor for an embedded system is a delicate balancing act between flexibility and performance, however if a reconfigurable processor core was available and accessible then the cost of designing such systems would decrease as an existing design could be easily modified to fit an applcation and changed in the future if needs change.
 
 Pomegranate is an open source soft-core processor written in VHDL. The goal of Pomegranate is to provide an accessible and easy to configure processor core that can be used in a varierty of embedded systems.
