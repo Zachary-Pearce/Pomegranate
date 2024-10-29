@@ -6,39 +6,48 @@ use ieee.numeric_std.all;
 package pomegranate_conf is
     ------ VARIABLES ------
     
-    constant word_w: NATURAL := 32; --the width of the data and address bus, or architecture width
+    constant word_w: NATURAL := 8; --the width of the data bus
+    constant instruction_w: NATURAL := 24; --the width of instructions
     constant op_w: NATURAL := 5;    --the number of bits reserved for the opcode in instructions
-    constant Raddr_w: NATURAL := 5; --the number of bits reserved for register addresses
+    constant Raddr_w: NATURAL := 3; --the number of bits reserved for register addresses
     constant Maddr_w: NATURAL := 8; --the number of bits reserved for memory addresses
+    constant Iaddr_w: NATURAL := 8;--the number of bits reserved for instruction addresses
     
     --opcode mnemonics
     type opcode is
     (
         NOP,
+        SIE,
+        CIE,
+        SCF,
+        CCF,
         ADD,
         SUB,
         DAND,
         DOR,
         DNOT,
         DXOR,
-        MOV,
-        LDR,
-        STR,
-        BRA,
-        BRZ,
-        BRP,
-        CMP,
-        INPA,
-        INPB,
-        ADOUT,
-        AOUTC,
-        BDOUT,
-        BOUTC,
         ADDI,
         SUBI,
         ANDI,
         ORI,
-        XORI
+        LSL,
+        LSR,
+        CPY,
+        LDR,
+        LDRI,
+        STR,
+        STRI,
+        PUSH,
+        POP,
+        BRA,
+        BRZ,
+        BRC,
+        BRN,
+        BRP,
+        CALL,
+        RET,
+        RETI
     );
     
     --operands
@@ -47,10 +56,18 @@ package pomegranate_conf is
         Rd,
         Rs,
         Rt,
-        data_address,
-        prgm_address,
-        imm,
-        char
+        Data_Address,
+        Instruction_Address,
+        Immediate
+    );
+    
+    --instruction formats
+    type formats is
+    (
+        register_format,
+        branch_format,
+        load_format,
+        store_format
     );
     
     ------ FUNCTIONS AND CONSTANTS ------
@@ -59,7 +76,6 @@ package pomegranate_conf is
     -- ideal for resetting large memories
     constant zeros: std_logic_vector(word_w-1 downto 0) := (others => '0');
 
-
     --INSTRUCTION FORMAT CHECK FUNCTIONS
 
     -- register format check
@@ -67,12 +83,6 @@ package pomegranate_conf is
 
     -- branch format check
     function BFormatCheck (op: in opcode) return std_logic;
-
-    -- immediate format check
-    function IFormatCheck (op: in opcode) return std_logic;
-
-    -- I/O format check
-    function IOFormatCheck (op: in opcode) return std_logic;
 
     -- load format check
     function LFormatCheck (op: in opcode) return std_logic;
@@ -83,7 +93,7 @@ package pomegranate_conf is
     --OPCODE FUNCTIONS
     
     -- address index function
-    function AddressIndex (addrbus: in std_logic_vector(word_w-1 downto 0) := (others => '0'); operand: in operands := Rs) return NATURAL;
+    function AddressIndex (instruction_format: in formats := branch_format; operand: in operands := Rs) return NATURAL;
     
     -- convert from standard logic vector to opcode mnemonic
     function slv2op (slv: in std_logic_vector) return opcode;
@@ -124,34 +134,33 @@ package body pomegranate_conf is
         "10101",
         "10110",
         "10111",
-        "11000"
+        "11000",
+        "11001",
+        "11010",
+        "11011",
+        "11100",
+        "11101",
+        "11110",
+        "11111"
     );
     
     --operand MSB index table
     type operand_table is array (operands) of natural;
-    -- branch format
-    constant branch_table: operand_table := (
-        0, 10, 0, 0, 7, 0, 0
-    );
     -- register format
     constant register_table: operand_table := (
-        27, 22, 17, 0, 0, 0, 0
+        18, 10, 13, 0, 0, 7
     );
-    -- immediate format
-    constant immediate_table: operand_table := (
-        10, 9, 0, 0, 0, 7, 0
-    );
-    -- I/O format
-    constant IO_table: operand_table := (
-        10, 9, 0, 0, 0, 0, 7
+    -- branch format
+    constant branch_table: operand_table := (
+        0, 0, 0, 0, 7, 0
     );
     -- load format
     constant load_table: operand_table := (
-        10, 0, 0, 7, 0, 0, 0
+        18, 0, 0, 7, 0, 15
     );
     -- store format
     constant store_table: operand_table := (
-        0, 10, 0, 7, 0, 0, 0
+        0, 10, 0, 7, 0, 18
     );
     
     ------ FUNCTIONS ------
@@ -162,8 +171,8 @@ package body pomegranate_conf is
     function RFormatCheck (op: in opcode) return std_logic is
     begin
         case op2slv(op) is
-            --opcodes in this format are as follows: ADD, SUB, DAND, DOR, DNOT, DXOR, MOV
-            when "00001" | "00010" | "00011" | "00100" | "00101" | "00110" | "00111" =>
+            --opcodes in this format are as follows: SIE, CIE, SFC, CCF, ADD, SUB, AND, OR, NOT, XOR, ADDI, SUBI, ANDI, ORI, LSL, LSR, CPY
+            when "00001" | "00010" | "00011" | "00100" | "00101" | "00110" | "00111" | "01000" | "01001" | "01010" | "01011" | "01100" | "01101" | "01110" | "01111" | "10000" | "10001" =>
                 --return '1' to specify we are in the register format
                 return '1';
             when others =>
@@ -176,8 +185,8 @@ package body pomegranate_conf is
     function BFormatCheck (op: in opcode) return std_logic is
     begin
         case op2slv(op) is
-            --opcodes in this format are as follows: BRA, BRZ, BRP, CMP
-            when "01010" | "01011" | "01100" | "01101" =>
+            --opcodes in this format are as follows: NOP, BRA, BRZ, BRC, BRN, BRP, CALL, RET, RETI
+            when "00000" | "11000" | "11001" | "11010" | "11011" | "11100" | "11101" | "11110" | "11111" =>
                 --return '1' to indicate we are in the branch format
                 return '1';
             when others =>
@@ -186,40 +195,12 @@ package body pomegranate_conf is
         end case;
     end function BFormatCheck;
 
-    -- immediate format check
-    function IFormatCheck (op: in opcode) return std_logic is
-    begin
-        case op2slv(op) is
-            --opcodes in this format are as follows: ADDI, SUBI, ANDI, ORI, XORI
-            when "10100" | "10101" | "10110" | "10111" | "11000" =>
-                --return '1' to indicate we are in the immediate format
-                return '1';
-            when others =>
-                --otherwise return '0'
-                return '0';
-        end case;
-    end function IFormatCheck;
-
-    -- I/O format check
-    function IOFormatCheck (op: in opcode) return std_logic is
-    begin
-        case op2slv(op) is
-            --opcodes in this format are as follows: INPA, INPB, AOUT, AOUTC, BOUT, BOUTC
-            when "01110" | "01111" | "10000" | "10001" | "10010" | "10011" =>
-                --return '1' to indicate we are in the IO format
-                return '1';
-            when others =>
-                --otherwise return '0'
-                return '0';
-        end case;
-    end function IOFormatCheck;
-
     -- load format check
     function LFormatCheck (op: in opcode) return std_logic is
     begin
         case op2slv(op) is
-            --opcodes in this format are as follows: LDR
-            when "01000" =>
+            --opcodes in this format are as follows: LDR, LDRI, POP
+            when "10010" | "10011" | "10111" =>
                 --return '1' to indicate we are in the load format
                 return '1';
             when others =>
@@ -232,8 +213,8 @@ package body pomegranate_conf is
     function SFormatCheck (op: in opcode) return std_logic is
     begin
         case op2slv(op) is
-            --opcodes in this format are as follows: STR
-            when "01001" =>
+            --opcodes in this format are as follows: STR, STRI, PUSH
+            when "10100" | "10101" | "10110" =>
                 --return '1' to indicate we are in the store format
                 return '1';
             when others =>
@@ -245,27 +226,21 @@ package body pomegranate_conf is
     --OPCODE FUNCTIONS
     
     -- address index return function
-    function AddressIndex (addrbus: in std_logic_vector(word_w-1 downto 0) := (others => '0'); operand: in operands := Rs) return NATURAL is
-        --a constant to represent the opcode of the addrbus content
-        constant op: opcode := slv2op(addrbus(word_w-1 downto word_w-op_w));
+    function AddressIndex (instruction_format: in formats := branch_format; operand: in operands := Rs) return NATURAL is
     begin
         --check which instruction format the opcode is in
         -- then return the index of the MSB of the target operand
-        if RFormatCheck(op) = '1' then --register format
-            return register_table(operand);
-        elsif BFormatCheck(op) = '1' then --branch format
-            return branch_table(operand);
-        elsif IFormatCheck(op) = '1' then --immediate format
-            return immediate_table(operand);
-        elsif IOFormatCheck(op) = '1' then --I/O format
-            return IO_table(operand);
-        elsif LFormatCheck(op) = '1' then --load format
-            return load_table(operand);
-        elsif SFormatCheck(op) = '1' then --store format
-            return store_table(operand);
-        else -- if it is a no operation (NOP) instruction
-            return word_w;
-        end if;
+        case instruction_format is
+            when register_format =>
+                return register_table(operand);
+            when branch_format =>
+                return branch_table(operand);
+            when load_format =>
+                return load_table(operand);
+            when store_format =>
+                return store_table(operand);
+        end case;
+        report "format not found!" severity error;
         return word_w; --on a fail to fulfill conditions return the archiecture width
     end function AddressIndex;
     
