@@ -2,7 +2,7 @@
     <image src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png" style="height: 200px;"></image>
     <image src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" alt="Contributor Covenant Badge"></image>
 </p>
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+[Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
 Open source projects are a great thing, they allow someone to learn from an existing system without spending money on a textbook.
 
