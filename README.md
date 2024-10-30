@@ -1,8 +1,10 @@
 <p align="center">
-    <picture style="width: 50%;">
-        <source srcset="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-black.png" media="(prefers-color-scheme: light)">
-        <img src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png" style="display: block; width:100%; height:auto;">
+    <div style="width:50;">
+        <picture>
+            <source srcset="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-black.png" media="(prefers-color-scheme: light)">
+            <img src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png" style="display: block; width:100%; height:auto;">
     </picture>
+    </div>
     <br>
     <img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" alt="Contributor Covenant Badge">
     <img src="https://img.shields.io/badge/Vivado-2024.1-green" alt="Vivado 2024.1">
