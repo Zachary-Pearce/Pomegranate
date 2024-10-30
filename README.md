@@ -1,5 +1,5 @@
 <p align="center">
-    <picture>
+    <picture style="height: 200px;">
         <source srcset="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-black.png" media="(prefers-color-scheme: light)">
         <img src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png">
     </picture>
