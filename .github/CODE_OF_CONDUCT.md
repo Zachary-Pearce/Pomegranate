@@ -59,7 +59,7 @@ representative at an online or offline event.
 
 ## Enforcement
 
-Intances of abusive, harassing, or other unacceptable behaviour may be reported via email at zachary.pearce25@gmail.com. The promptness and fairness of the review and investigation of any complaints will be held to a high standard, please remember that upholding this standard is reliant on the quality of the report so make sure to include the following:
+Intances of abusive, harassing, or other unacceptable behaviour may be reported via email at zachary.pearce25@gmail.com. The promptness and fairness of the review and investigation of any complaints will be held to a high standard, please remember that upholding this standard is also reliant on the quality of the report so make sure to include the following:
 * Your contact information
 * If known, the names of those involved
 * When, where, and what
