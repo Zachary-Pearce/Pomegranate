@@ -1,6 +1,6 @@
 <p align="center">
     <picture>
-        <source srcset="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-black.png" media="(prefers-color-scheme: dark)">
+        <source srcset="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-black.png" media="(prefers-color-scheme: light)">
         <img src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png" style="height: 200px;">
     </picture>
     <br>
