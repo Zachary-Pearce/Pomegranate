@@ -61,8 +61,8 @@ representative at an online or offline event.
 
 Intances of abusive, harassing, or other unacceptable behaviour may be reported via email at zachary.pearce25@gmail.com. The promptness and fairness of the review and investigation of any complaints will be held to a high standard, please remember that upholding this standard is also reliant on the quality of the report so make sure to include the following:
 * Your contact information
-* If known, the names of those involved
-* When, where, and what
+* If known, the usernames of those involved
+* When, where, and what happened
 * Any additional context you think is necessary
 * If the behaviour is ongoing
 
@@ -79,12 +79,7 @@ the consequences for any action they deem in violation of this Code of Conduct:
 **Community Impact**: A violation through a single incident or series of
 actions.
 
-**Consequence**: A warning with consequences for continued behavior. No
-interaction with the people involved, including unsolicited interaction with
-those enforcing the Code of Conduct, for a specified period of time. This
-includes avoiding interactions in community spaces as well as external channels
-like social media. Violating these terms may lead to a temporary or permanent
-ban.
+**Consequence**: A warning for continued behaviour. Public or private aggression directed towards the people involed, including those enforcing the Code of Conduct, may lead to a temporary or permanent ban.
 
 ### 2. Temporary Ban
 
@@ -92,7 +87,7 @@ ban.
 sustained inappropriate behavior.
 
 **Consequence**: A temporary ban from any sort of interaction or public
-communication with the community for a specified period of time. No public or
+communication with the community for a period of time depending on the severity of the violation. No public or
 private interaction with the people involved, including unsolicited interaction
 with those enforcing the Code of Conduct, is allowed during this period.
 Violating these terms may lead to a permanent ban.
