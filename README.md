@@ -2,7 +2,7 @@
     <picture>
         <source media="(prefers-color-scheme: light)" srcset="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-dark.png"/>
         <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png"/>
-        <img src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-dark.png"  style="display: block; width:100%; height:auto;">
+        <img src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png"  style="display: block; width:100%; height:auto;">
     </picture>
     <br>
     <img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" alt="Contributor Covenant Badge">
