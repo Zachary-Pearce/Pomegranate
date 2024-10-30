@@ -1,8 +1,11 @@
 <p align="center">
-    <image src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png" style="height: 200px;"></image>
+    <picture>
+        <source srcset="images/logo/pomeg-black.png" media="(prefers-color-scheme: dark)">
+        <img src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png" style="height: 200px;">
+    </picture>
     <br>
-    <image src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" alt="Contributor Covenant Badge"></image>
-    <image src="https://img.shields.io/badge/Vivado-2024.1-green" alt="Vivado 2024.1"></image>
+    <img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" alt="Contributor Covenant Badge">
+    <img src="https://img.shields.io/badge/Vivado-2024.1-green" alt="Vivado 2024.1">
 </p>
 
 Open source projects are a great thing, they allow someone to learn from an existing system without spending money on a textbook.
