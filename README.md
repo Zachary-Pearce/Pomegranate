@@ -1,4 +1,4 @@
-<p align="center" style="width:10%>
+<p align="center" style="width:10%;">
     <picture>
         <source srcset="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-black.png" media="(prefers-color-scheme: light)">
         <img src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png" style="display: block; width:100%; height:auto;">
