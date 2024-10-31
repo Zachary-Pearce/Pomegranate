@@ -21,7 +21,7 @@ this repository. To get started, I reccomend that you start familiarising yourse
 - Link 3 (configuring Pomegranate)
 - Link 4 (programming Pomegranate)
 
-## A Message for Newcomers
+## What if I don't know VHDL?
 No matter how you stumbled across this repository, if you are using it to learn computer architecture it may seem daunting if you have not learnt VHDL, however
 I wasn't exactly an expert in it until I had really started to learn it during and after my undergraduate thesis. There are resources you can use, if you are a
 university student you will likely have access to textbooks, [such as this one](https://www.amazon.co.uk/Digital-System-Design-VHDL-Zwolinski/dp/013039985X) which
