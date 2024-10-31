@@ -28,8 +28,7 @@ university student you will likely have access to textbooks, [such as this one](
 I used to learn VHDL at first and also has a simple processor example you can follow.
 
 Every piece of VHDL has been well commented explaining why the code is written how it is with the intent of helping you where it can. In terms of software, Vivado
-was used to program and test all of Pomegranate and there is a free version available [here](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado/vivado-buy.html).
-Lastly, if you experience any difficulties, open an issue.
+was used to program and test all of Pomegranate and there is a free version available [here](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado/vivado-buy.html). Lastly, if you experience any difficulties, open an issue.
 
 ## Can I use this design in my projects?
 If you think that this design would be a good fit for your project then please use it. As it is made to be easily edited, you should be able to adapt it
