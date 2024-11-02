@@ -1,31 +1,32 @@
 Thank you for your interest in contributing to Pomegranate! This document describes how you should contribute; documentation, modules, and optimisations so that you can maximise the chance of your pull request being accepted.
 
 # Getting Started
-A deployment of Pomegranate will be made up of multiple computational elements (or modules), this repository serves as a collection of these modules and provides a framework to connect them. If you are contributing a module then it is important to first read the wiki.
+This repositories main purpose is to teach others about computer architecture, the highest level of understanding we can provide is limited by the computational elements (or modules) we have access to. This repository also serves as a collection of those modules we can use in configurations of Pomegranate to teach particular concepts. For example, you could contribute a floating point ALU which would allow us to teach floating point representation and arithmetic. If you want to contribute a module then I reccomend you read the following from the wiki:
+* Link 1 (Pomegranate's mission, and how it seeks to achieve it)
+* Link 2 (architecture details; instruction set, base architecture)
+* Link 3 (configuring Pomegranate)
 
-If you are contributing optimisations to an existing element then it is important to also read the README supplied with it to familiarise yourself with its function and design decisions.
+If you are contributing optimisations to an existing module then it is important to also read the README supplied with it to familiarise yourself with its function and design decisions.
 
 If there are multiple contributions you wish to make, we ask that these be sent in separate pull requests, a pull request that contributes optimisations to multiple modules will be denied.
 
 ## Development Environment
-This repository works on pull requests, so please create a fork of the repository and clone your fork, you can then work from this and submit a pull request when you're ready to do so.
-
-We would prefer that you use Vivado to simulate your designs as this will keep utilisation graphs and errors in a similar format. You can download the latest version of the Vivado design suite [here](https://www.xilinx.com/products/design-tools/vivado.html).
+We would prefer that you use Vivado to simulate your designs as this will keep errors in a similar format. You can download the latest free version of the Vivado design suite [here](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado/vivado-buy.html).
 
 # Contributing Modules
-Others must be able to understand what your module is doing and why. For this reason, A module of your design must be accompanied by a README that includes the following:
-- An explanation of the module's function and its application(s).
-- An explanation of any design choices.
-- Any standards that were followed during the design process.
-- A link to the testing files at the end of the document.
+The most important aspect of any contributed code is it being well commented and readable, you can make a good design but others must be able to understand what your module is doing and why. To support this, A module of your design must be accompanied by a README that includes the following:
+* An explanation of the module's function and its application(s).
+* An explanation of any design choices.
+* If applicable, any standards that were followed during the design process.
+* A link to the testing files on this repository at the end of the document.
 
-Following on from the last point, any testbench files used must be contributed in the same pull request in a folder under "testing" with the same name as the folder that holds the design files. (Add an explanation image here)
+Following on from the last point, any testbenches used must be contributed in the same pull request in a folder under "testing" with the same name as the folder that holds the design files. (Add an explanation image here)
 
 Testbench files must also be accompanied by a README that shows simulation results, this should include:
-- Simulation waveforms.
-- Utilisation graphs for at least one compatible platform.
-- Timing reports.
-- A table of tested and compatible platforms.
+* Simulation waveforms.
+* A table showing the number of resources used.
+* Timing reports.
+* A table of tested and compatible platforms.
 
 ## Tested and Compatible Platforms
 Tested and compatible platforms should be provided in a table with the following format.
@@ -47,19 +48,12 @@ You may also note intended future platform compatibility by marking it as untest
 # Contributing Optimisations
 Optimisations refer to small changes to an existing module in the repository, this could be optimisations that simplify code, reduce delay, reduce resource utilisation, or improve compatibility. Optimisations should not change the core of the design and as such remain consistent with the supplied README.
 
-Before making optimisations you must be able to justify the change. Make sure you are solving a problem rather than finding a problem to solve. Once you have made your optimisations, you must present notable improvements in your pull request which backs up your justification. Please also update the test README with any new results (e.g. Utilisation graphs).
+Before making optimisations you must be able to justify the change. Make sure you are solving a problem rather than finding a problem to solve. Once you have made your optimisations, you must present notable improvements in your pull request which backs up your justification. Please also update the test README with any new results (e.g. Resource utilisation).
 
 As such, an optimisation pull request must include the following:
-- Problem justification.
-- Results that show a clear improvement.
-- Updated test documentation, if applicable.
+* Problem justification.
+* Results that show a clear improvement.
+* Updated test documentation, if applicable.
 
 # Contributing Documentation
-Documentation can refer to a README supplied with a module or its testbench, or wiki pages. We expect contributors to provide documentation with their pull requests. However, we are aware that writing is not every developer's forte. It certainly isn't mine.
-
-Therefore we accept improvements to the grammar, spelling, and clarity of any documentation. These improvements must not change the ideas communicated.
-
-# Where to Get Help
-Not sure what to write here, but here are the notes I made on it...
-
-"where users can get help with your project" can mostly be covered by the code of conduct and with other contribution information such as a section that just says something like "if you need help regarding a change or clarification please open an issue with the following tag...".
+Documentation can refer to a README supplied with a module or its testbench, or wiki pages. We expect contributors to provide documentation with their pull requests. However, we are aware that writing is not every developer's forte. Therefore we accept improvements to the grammar, spelling, and clarity of any documentation. These improvements must not change the ideas communicated.
