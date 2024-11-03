@@ -14,5 +14,5 @@ This module is designed just to perform the very basic operations:
 
 This functionality was chosen because they require no extra logic except the simple machines required to perform the function, for example multipliers require both a simple machine to perform the multiplication and a way to deal with the output width being the sum of the input widths.
 
-> [!NOTE] Simple Machines
+> [!NOTE]
 > Simple machines are standard designs that are often put together to form a larger system. For example, an ALU in modern CPUs is made of simple machines that each perform one kind of arithmetic.
