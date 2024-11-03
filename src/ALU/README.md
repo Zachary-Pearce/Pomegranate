@@ -5,5 +5,5 @@ This is the ALU used in Pomegranates base configuration. It can perform what cou
 
 <figure class="image">
     <img src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/Cache%20block%20diagram.png" alt="ALU block diagram" style="width:100%">
-    <figcaption style="font-style:italic; text-align:center;">Figure 1 - ALU block diagram</figcaption>
+    <figcaption><em>Figure 1 - ALU block diagram</em></figcaption>
 </figure>
