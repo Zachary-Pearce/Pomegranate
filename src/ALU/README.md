@@ -1,14 +1,3 @@
-<html>
-<head>
-    <style>
-        figcaption {
-            text-align: center;
-            font-style: italic;
-        }
-    </style>
-</head>
-</html>
-
 # Base ALU
 This is the ALU used in Pomegranates base configuration. It can perform what could could be considered fundamental logic and arithmetic operations with support for immediate addressing.
 ![](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/Cache%20block%20diagram.png)
@@ -16,5 +5,5 @@ This is the ALU used in Pomegranates base configuration. It can perform what cou
 
 <figure class="image">
     <img src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/Cache%20block%20diagram.png" alt="ALU block diagram" style="width:100%">
-    <figcaption>Figure 1 - ALU block diagram</figcaption>
+    <figcaption style="font-style:italic; text-align:center;">Figure 1 - ALU block diagram</figcaption>
 </figure>
