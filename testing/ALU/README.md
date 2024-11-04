@@ -6,7 +6,7 @@
 ### Test Cases
 <!-- Please make sure to give a brief description of the simulation test cases -->
 | Test Case | Brief Description | Expected Result |
-| --- | :---: | :---: |
+| :---: | --- | --- |
 | 1 | Example text | Example text |
 
 ## Resource Utilization
