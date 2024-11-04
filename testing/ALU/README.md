@@ -26,6 +26,7 @@
 
 ```math
 \begin{equation}
+\tag{1}
 \text{Maximum clock frequency (GHz)} = \frac{1}{\text{Maximum logic delay}}
 \end{equation}
 ```
