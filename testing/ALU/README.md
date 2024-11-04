@@ -22,6 +22,13 @@
 | Clock | 0 | 0 |
 | Logic | 0 | 0 |
 
+### Maximum clock frequency
+
+```math
+\text{Maximum clock frequency (GHz) = \frac{1}{\text{Maximum logic delay}}}
+```
+Maximum Clock frequency = [insert result here]
+
 ## Tested and Compatible Platforms
 
 <!-- refer to the contribution guidelines for how to fill out this table -->
