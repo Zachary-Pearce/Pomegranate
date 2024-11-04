@@ -25,9 +25,7 @@
 ### Maximum clock frequency
 
 ```math
-\begin{align}
-&\text{Maximum clock frequency (GHz)} = \frac{1}{\text{Maximum logic delay}} && (1)
-\end{align}
+\left \text{Maximum clock frequency (GHz)} = \frac{1}{\text{Maximum logic delay}} \right (1)
 ```
 
 Maximum Clock frequency = [insert result here]
