@@ -3,7 +3,11 @@
 ## Simulation Waveform
 ![Simulation waveform](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/[insert waveform image name here])
 
+### Test Cases
 <!-- Please make sure to give a brief description of the simulation test cases -->
+| Test Case | Brief Description | Expected Result |
+| --- | :---: | :---: |
+| 1 | Example text | Example text |
 
 ## Resource Utilization
 
