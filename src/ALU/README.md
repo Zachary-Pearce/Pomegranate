@@ -1,7 +1,7 @@
 # Base ALU
 This is the ALU used in Pomegranates base configuration. It can perform what could could be considered fundamental logic and arithmetic operations with support for immediate addressing. The figure below shows the ALU block diagram.
 
-![ALU block diagram](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/Cache%20block%20diagram.png)
+![ALU block diagram](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/Basic_ALU_Block_Diagram.jpg)
 
 This module is designed just to perform the very basic operations:
 * add
