@@ -1,4 +1,4 @@
-# ALU Testbench Results
+# ALU Testing Results
 
 ## Simulation Waveform
 ![Simulation waveform](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/[insert waveform image name here])
