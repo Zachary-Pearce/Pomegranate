@@ -5,6 +5,8 @@
 
 ## Resource Utilization
 
+<!-- This does not show all of the resources you could use, just the most common ones... -->
+<!-- Feel free to add more rows to the table if needed -->
 | Resource | Amount Used |
 | --- | :---: |
 | LUT | 0 |
@@ -14,8 +16,15 @@
 
 ## Timing Reports
 
+<!-- In this section present the timing characteristics of the design -->
+| Net | Minimum (ns) | Maximum (ns) |
+| --- | :---: | :---: |
+| Clock | 0 | 0 |
+| Logic | 0 | 0 |
+
 ## Tested and Compatible Platforms
 
+<!-- refer to the contribution guidelines for how to fill out this table -->
 | Family | Vendor | Synthesized? | Implemented? | Comments |
 | --- | --- | :---: | :---: | --- |
 | Zynq 7000 | AMD Xilinx | :grey_question: | :grey_question: | NA |
