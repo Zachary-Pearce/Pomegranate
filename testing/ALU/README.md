@@ -25,13 +25,14 @@
 ### Maximum clock frequency
 
 ```math
-\begin{equation}
-\text{Maximum clock frequency (GHz)} = \frac{1}{\text{Maximum logic delay}} \tag{1}\label{clock}
-\end{equation}
+\text{Maximum clock frequency (GHz)} = \frac{1}{\text{Maximum logic delay}}
 ```
 
-Using equation 1, we can find the maximum clock frequency:
+Using the above equation, we can find the maximum clock frequency:
 Maximum Clock frequency = [insert result here]
+
+> [!NOTE]
+> The maximum clock frequency also applies to purely combinational designs as this will tell us the maximum clock frequency of processors it is used in
 
 ## Tested and Compatible Platforms
 
