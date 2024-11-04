@@ -3,6 +3,8 @@
 ## Simulation Waveform
 ![Simulation waveform](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/[insert waveform image name here])
 
+<!-- Please make sure to give a brief description of the simulation test cases -->
+
 ## Resource Utilization
 
 <!-- This does not show all of the resources you could use, just the most common ones... -->
@@ -31,7 +33,7 @@
 Using the above equation, we can find the maximum clock frequency: $[\text{insert result here}]\text{GHz}$
 
 > [!NOTE]
-> The maximum clock frequency also applies to purely combinational designs as this will tell us the maximum clock frequency of processors it is used in
+> The maximum clock frequency also applies to purely combinational designs as this will tell us the maximum clock frequency of processors the design is used in
 
 ## Tested and Compatible Platforms
 
