@@ -8,6 +8,8 @@
 | Test Case | Brief Description | Expected Result |
 | :---: | --- | --- |
 | 1 | Example text | Example text |
+| 2 | Example text | Example text |
+| 3 | Example text | Example text |
 
 ## Resource Utilization
 
