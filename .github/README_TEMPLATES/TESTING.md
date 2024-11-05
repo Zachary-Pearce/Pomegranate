@@ -34,7 +34,7 @@
 ### Maximum clock frequency
 
 ```math
-\text{Maximum clock frequency (GHz)} = \frac{1}{\text{Maximum logic delay (ns)}}
+\text{Maximum clock frequency (GHz)} = \frac{1}{\text{Maximum total delay (ns)}}
 ```
 
 Using the above equation, we can find the maximum clock frequency: $[\text{insert result here}]\text{GHz}$
