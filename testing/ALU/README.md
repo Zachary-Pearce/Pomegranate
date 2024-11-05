@@ -25,7 +25,7 @@
 ## Timing Reports
 
 <!-- In this section, please present the timing characteristics of the design -->
-| Net | Minimum (ns) | Maximum (ns) |
+| Delay | Minimum (ns) | Maximum (ns) |
 | --- | :---: | :---: |
 | Logic | 0 | 0 |
 | Net | 0 | 0 |
@@ -34,7 +34,7 @@
 ### Maximum clock frequency
 
 ```math
-\text{Maximum clock frequency (GHz)} = \frac{1}{\text{Maximum logic delay (ns)}}
+\text{Maximum clock frequency (GHz)} = \frac{1}{\text{Maximum total delay (ns)}}
 ```
 
 Using the above equation, we can find the maximum clock frequency: $[\text{insert result here}]\text{GHz}$

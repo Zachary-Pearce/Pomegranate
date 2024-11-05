@@ -25,7 +25,7 @@
 ## Timing Reports
 
 <!-- In this section, please present the timing characteristics of the design -->
-| Net | Minimum (ns) | Maximum (ns) |
+| Delay | Minimum (ns) | Maximum (ns) |
 | --- | :---: | :---: |
 | Logic | 0 | 0 |
 | Net | 0 | 0 |
