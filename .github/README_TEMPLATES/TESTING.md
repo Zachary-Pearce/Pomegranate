@@ -28,6 +28,8 @@
 | Net | Minimum (ns) | Maximum (ns) |
 | --- | :---: | :---: |
 | Logic | 0 | 0 |
+| Net | 0 | 0 |
+| Total | 0 | 0 |
 
 ### Maximum clock frequency
 
