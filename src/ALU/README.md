@@ -20,4 +20,4 @@ This functionality was chosen because they require no extra logic except the sim
 > Simple machines are standard designs that are often put together to form a larger system. For example, an ALU in modern CPUs is made of simple machines that each perform one kind of arithmetic.
 
 ## Testing
-The test README can be found [here](https://github.com/Zachary-Pearce/Pomegranate/blob/main/testing/ALU/README.md)
+Information surrounding the testing of this module can be found [here](https://github.com/Zachary-Pearce/Pomegranate/blob/main/testing/ALU/README.md)

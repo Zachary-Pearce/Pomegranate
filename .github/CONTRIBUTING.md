@@ -15,9 +15,8 @@ We would prefer that you use Vivado to simulate your designs as this will keep e
 
 # Contributing Modules
 The most important aspect of any contributed code is it being well commented and readable, you can make a good design but others must be able to understand what your module is doing and why. To support this, A module of your design must be accompanied by a README that includes the following:
-* An explanation of the module's function and its application(s).
-* An explanation of any design choices.
-* If applicable, any standards that were followed during the design process.
+* An explanation of the module's design and justification for choices made.
+* A list of standards if any that were followed during the design process.
 * A link to the testing files on this repository at the end of the document.
 
 Following on from the last point, any testbenches used must be contributed in the same pull request in a folder under "testing" with the same name as the folder that holds the design files. (Add an explanation image here)
@@ -27,6 +26,8 @@ Testbench files must also be accompanied by a README that shows simulation resul
 * A table showing the number of resources used.
 * Timing reports.
 * A table of tested and compatible platforms.
+
+Templates for these READMEs can be found [here](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/README_TEMPLATES).
 
 ## Tested and Compatible Platforms
 Tested and compatible platforms should be provided in a table with the following format.
