@@ -1,7 +1,7 @@
 # Top Testing Results
 
 ## Simulation Waveform
-![Simulation waveform](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/[insert waveform image name here])
+![Simulation waveform](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/Top_Waveform.png)
 
 ### Simulated Test Cases
 <!-- Please make sure to give a brief description of the simulation test cases -->
