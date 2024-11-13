@@ -7,9 +7,10 @@
 <!-- Please make sure to give a brief description of the simulation test cases -->
 | Test Case | Brief Description | Expected Result |
 | :---: | --- | --- |
-| 1 | Example text | Example text |
-| 2 | Example text | Example text |
-| 3 | Example text | Example text |
+| 1 | Perform an arithmetic operation. | The target (-71) is subtracted from the source (50) and a correct result is placed on the data bus. |
+| 2 | Perform an arithmetic operation with an immediate operation. | The source (50) is added to the immediate (14) and a correct result is placed on the data bus. |
+| 3 | Perform a logical operation. | An OR operation is performed between the source ("00110010") and the target ("10111001") and a correct result is placed on the data bus. |
+| 4 | Perform a logical operation with an immediate input. | An AND operation is performed between the source ("00110010") and the immediate ("00001110") and a correct result is placed on the data bus. |
 
 ## Resource Utilization
 

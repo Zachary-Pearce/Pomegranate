@@ -41,7 +41,8 @@ component ALU is
         n: natural := 8 --data width
     );
     Port (
-        ALU_EN, ALU_ADD, ALU_SUB, ALU_AND, ALU_OR, ALU_XOR, ALU_NOT, ALU_SHIFT, ALU_LnR, ALU_IMM: in std_logic;
+        ALU_EN, ALU_IMM: in std_logic;
+        ALU_OP: in std_logic_vector(2 downto 0);
         Rs, Rt, Immediate: in std_logic_vector(n-1 downto 0);
         Z: out std_logic_vector(n-1 downto 0);
         C_flag, Z_flag, N_flag, P_flag: out std_logic
@@ -52,7 +53,8 @@ end component ALU;
 constant nn: natural := 8;
 
 --signals
-signal ALU_EN, ALU_ADD, ALU_SUB, ALU_AND, ALU_OR, ALU_XOR, ALU_NOT, ALU_SHIFT, ALU_LnR, ALU_IMM: std_logic := '0';
+signal ALU_EN, ALU_IMM: std_logic := '0';
+signal ALU_OP: std_logic_vector(2 downto 0) := "000";
 signal databus, Immediate: std_logic_vector(nn-1 downto 0) := (others => '0');
 signal Rs, Rt: std_logic_vector(nn-1 downto 0) := (others => '0');
 signal C, Z, N, P: std_logic := '0';
@@ -61,8 +63,7 @@ begin
 
 --instantiate unit under test
 DUT: ALU generic map (nn) port map (
-    ALU_EN => ALU_EN, ALU_ADD => ALU_ADD, ALU_SUB => ALU_SUB, ALU_AND => ALU_AND, ALU_OR => ALU_OR,
-    ALU_XOR => ALU_XOR, ALU_NOT => ALU_NOT, ALU_SHIFT => ALU_SHIFT, ALU_LnR => ALU_LnR, ALU_IMM => ALU_IMM, Rs => Rs, Rt => Rt,
+    ALU_EN => ALU_EN, ALU_IMM => ALU_IMM, ALU_OP => ALU_OP, Rs => Rs, Rt => Rt,
     Immediate => Immediate, Z => databus, C_flag => C, Z_flag => Z, N_flag => N, P_flag => P
 );
 
@@ -76,15 +77,8 @@ begin
     databus <= "ZZZZZZZZ";
     Immediate <= "ZZZZZZZZ";
     ALU_EN <= '1';
-    ALU_ADD <= '0';
-    ALU_SUB <= '1';
-    ALU_AND <= '0';
-    ALU_OR <= '0';
-    ALU_XOR <= '0';
-    ALU_NOT <= '0';
-    ALU_SHIFT <= '0';
-    ALU_LnR <= '0';
     ALU_IMM <= '0';
+    ALU_OP <= "001";
 
     wait for 10ns;
     --second stimuli - arithmetic operation with immediate input
@@ -93,15 +87,8 @@ begin
     databus <= "ZZZZZZZZ";
     Immediate <= "00001110";
     ALU_EN <= '1';
-    ALU_ADD <= '1';
-    ALU_SUB <= '0';
-    ALU_AND <= '0';
-    ALU_OR <= '0';
-    ALU_XOR <= '0';
-    ALU_NOT <= '0';
-    ALU_SHIFT <= '0';
-    ALU_LnR <= '0';
     ALU_IMM <= '1';
+    ALU_OP <= "000";
     
     wait for 10ns;
     --third stimuli - logical register operation
@@ -110,15 +97,8 @@ begin
     databus <= "ZZZZZZZZ";
     Immediate <= "ZZZZZZZZ";
     ALU_EN <= '1';
-    ALU_ADD <= '0';
-    ALU_SUB <= '0';
-    ALU_AND <= '0';
-    ALU_OR <= '0';
-    ALU_XOR <= '0';
-    ALU_NOT <= '1';
-    ALU_SHIFT <= '0';
-    ALU_LnR <= '0';
     ALU_IMM <= '0';
+    ALU_OP <= "011";
     
     wait for 10ns;
     --fourth stimuli - logical operation with immediate input
@@ -127,15 +107,8 @@ begin
     databus <= "ZZZZZZZZ";
     Immediate <= "00001110";
     ALU_EN <= '1';
-    ALU_ADD <= '0';
-    ALU_SUB <= '0';
-    ALU_AND <= '1';
-    ALU_OR <= '0';
-    ALU_XOR <= '0';
-    ALU_NOT <= '0';
-    ALU_SHIFT <= '0';
-    ALU_LnR <= '0';
     ALU_IMM <= '1';
+    ALU_OP <= "010";
 end process;
 
 end Behavioral;
