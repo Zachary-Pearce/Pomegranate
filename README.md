@@ -34,7 +34,7 @@ was used to program and test all of Pomegranate and there is a free version avai
 If you think that this design would be a good fit for your project then please use it. As it is made to be easily edited, you should be able to adapt it
 for whatever purpose you want.
 
-Compatibility with every FPGA development board is not gauranteed, but Pomegranate is designed to be compatible with as many Xilinx FPGAs as possible.
+Compatibility with every FPGA development board is not guaranteed, but Pomegranate is designed to be compatible with as many Xilinx FPGAs as possible.
 
 # Contribution
 Please read the [contribution guidelines](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting, as long as these
