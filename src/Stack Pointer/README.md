@@ -15,7 +15,25 @@ signal pointer_reg: unsigned(a-1 downto 0);
 signal pointer_reg_next: unsigned(a-1 downto 0);
 ```
 
-pointer_reg is the current value of the stack pointer and pointer_reg_next is the next value. pointer_reg is outputted as the current value while pointer_reg_next is used to work out the next value of the pointer.
+pointer_reg is the current value of the stack pointer and pointer_reg_next is the next value. pointer_reg is outputted as the current value while pointer_reg_next is assigned the new value inside of a process.
+
+```VHDL
+--SEQUENTIAL PART
+s0: process (CLK, RST) is
+begin
+    if RST = '1' then
+        pointer_reg_next <= starting_address;
+    elsif rising_edge(CLK) then
+        if (enable = '1') then
+            if (Pntr_INC = '1') then
+                pointer_reg_next <= pointer_reg + 1;
+            else
+                pointer_reg_next <= pointer_reg - 1;
+            end if;
+        end if;
+    end if;
+end process s0;
+```
 
 Outside of the process, pointer_reg is assigned the value of pointer_reg_next in a combinational statement:
 
