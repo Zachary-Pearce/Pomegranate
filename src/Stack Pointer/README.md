@@ -8,7 +8,7 @@ The stack is a FILO data structure stored in main memory. The stack pointer poin
 Line 46 of the code as shown below:
 
 ```VHDL
-    address <= std_logic_vector(pointer_reg) when enable = '1' and Pntr_INC = '1' else (others => 'Z');
+address <= std_logic_vector(pointer_reg) when enable = '1' and Pntr_INC = '1' else (others => 'Z');
 ```
 
 is how the value of the stack pointer is output when a value is pushed onto the stack, it is done this way because we need to output the value of the stack pointer before it is incremented this is because in actually the stack pointer points to the address space after the top of the stack.
@@ -16,7 +16,7 @@ is how the value of the stack pointer is output when a value is pushed onto the 
 This implementation also requires some extra logic when popping off the top of the stack. As the stack pointer points to the address after the top, we need to decrement it when we output it so it outputs the address of the top of the stack.
 
 ```VHDL
-    address <= std_logic_vector(pointer_reg-1) when enable = '1' and Pntr_INC = '0' else (others => 'Z');
+address <= std_logic_vector(pointer_reg-1) when enable = '1' and Pntr_INC = '0' else (others => 'Z');
 ```
 
 ## Testing
