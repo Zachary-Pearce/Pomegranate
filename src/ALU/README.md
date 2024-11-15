@@ -24,4 +24,4 @@ These fundamental operations were chosen because they are common and can be used
 > Simple machines are standard designs that are often put together to form a larger system. For example, an ALU in modern CPUs is made of simple machines that each perform one kind of arithmetic.
 
 ## Testing
-Information surrounding the testing of this module can be found [here](https://github.com/Zachary-Pearce/Pomegranate/blob/main/testing/ALU/README.md)
+Information surrounding the testing of this module can be found [here](https://github.com/Zachary-Pearce/Pomegranate/blob/main/testing/ALU/)
