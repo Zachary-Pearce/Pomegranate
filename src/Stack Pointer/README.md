@@ -5,6 +5,8 @@
 <!-- Make sure to justify any design choices made where there may be an alternative approach -->
 The stack is a FILO data structure stored in main memory. The stack pointer points to the top of the stack. It is a simple register with the ability to increment or decrement its value depending on if a value is pushed onto or popped off the top of the stack.
 
+![Stack block diagram](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/Stack_Pointer_Block_Diagram.png)
+
 ### Incrementation and Decrementation
 This stack pointer is designed to function within a clock cycle. In VHDL, signals that are assigned a value inside of a process take a clock cycle to settle. Therefore, whenever we access the stack pointer, we need to increment/decrement it at the same, this is done through 2 signals.
 
