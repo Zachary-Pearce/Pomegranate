@@ -7,9 +7,9 @@
 <!-- Please make sure to give a brief description of the simulation test cases -->
 | Test Case | Brief Description | Expected Result |
 | :---: | --- | --- |
-| 1 | Example text | Example text |
-| 2 | Example text | Example text |
-| 3 | Example text | Example text |
+| 1 | Drive address bus then increment stack pointer in time for the next clock. | The address bus is driven with the starting address of the stack. Register value is incremented by next clock. |
+| 2 | Drive the address bus with a decremented stack pointer value and decrement the stack pointer in time for the next clock cycle. | The address bus is driven with the decremented register value. Register value is decremented by next clock. |
+| 3 | Do nothing. | No change in register value and no output. |
 
 ## Resource Utilization
 

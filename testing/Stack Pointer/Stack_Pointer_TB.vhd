@@ -80,13 +80,7 @@ begin
     enable <= '1';
     Pntr_INC <= '0';
     
-    --third test case - drive the address bus
-    wait until rising_edge(CLK);
-    Address_Bus <= "ZZZZZZZZ";
-    enable <= '1';
-    Pntr_INC <= '0';
-    
-    --fourth test case - do nothing
+    --third test case - do nothing
     wait until rising_edge(CLK);
     Address_Bus <= "ZZZZZZZZ";
     enable <= '0';
