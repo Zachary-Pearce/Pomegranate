@@ -3,12 +3,12 @@
 ## Design and Justification
 <!-- Please discuss your design here -->
 <!-- Make sure to justify any design choices made where there may be an alternative approach -->
-The program counter (PC) is a register that holds the address of the current instruction being executed. This program counter is designed to function within a clock cycle, meaning the value of the program counter must be read at the same time as being incremented.
+The program counter (PC) is a register that holds the address of the current instruction being executed.
 
 ![Program counter block diagram](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/Program_Counter_Block_Diagram.png)
 
 ### Counter Logic
-To make this possible 2 signals were used, counter_reg and counter_next.
+This program counter is designed to function within a clock cycle, meaning the value of the program counter must be read at the same time as being incremented. To make this possible two signals were used, counter_reg and counter_next.
 
 ```VHDL
 signal counter_reg, counter_next: unsigned(a-1 downto 0);
