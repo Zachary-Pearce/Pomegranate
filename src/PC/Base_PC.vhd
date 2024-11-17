@@ -23,7 +23,7 @@ begin
     s0: process (CLK, RST) is
     begin
         if RST = '1' then
-            counter_next <= to_unsigned(1, 8);
+            counter_next <= to_unsigned(0, 8);
         elsif rising_edge(CLK) then
             --increment counter register
             if PC_INC = '1' then
