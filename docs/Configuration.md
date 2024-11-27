@@ -1,1 +1,0 @@
-Need to talk about how to configure pomegranate using the package file here.
