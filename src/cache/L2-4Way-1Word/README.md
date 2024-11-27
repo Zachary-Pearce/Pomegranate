@@ -1,1 +1,0 @@
-Design information about the cache goes here.
