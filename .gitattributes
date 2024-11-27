@@ -6,7 +6,7 @@
 
 # these files are text and should be normalised
 *.bash  text eol=lf
-*.sh    tetx eol=lf
+*.sh    text eol=lf
 *.c     text diff=c
 *.h     text diff=c
 
