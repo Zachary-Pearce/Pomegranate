@@ -47,5 +47,14 @@ counter_reg <= counter_next;
 
 On any given clock cycle, this will use the old value of counter_next, essentially meaning this line assigns counter_reg the current value of the counter. Then on the next clock cycle, the new value of counter_next will have settled and will be assined to counter_reg.
 
+### Output Logic
+In order to support subroutine calls and returns, there needs to be a way to put the value of the program counter on the data bus so it can be stored in the stack.
+
+```VHDL
+data_bus <= std_logic_vector(counter_reg+1) when DAT_PC = '1' else (others => 'Z');
+```
+
+This is done as above. We output an incremented counter_reg here because otherwise when returning from a subroutine we would return to and run the line where we called the subroutine. Creating an infinite loop.
+
 ## Testing
 Information surrounding the testing of this module can be found [here](https://github.com/Zachary-Pearce/Pomegranate/blob/main/testing/PC/).

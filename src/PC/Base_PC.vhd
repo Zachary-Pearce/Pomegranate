@@ -44,5 +44,6 @@ begin
     
     --OUTPUT PART
     address_out <= std_logic_vector(counter_reg);
-    data_bus <= std_logic_vector(counter_reg) when DAT_PC = '1' else (others => 'Z');
+    --output incremented counter reg so subroutine returns don't return to the line where we called the subroutine
+    data_bus <= std_logic_vector(counter_reg+1) when DAT_PC = '1' else (others => 'Z');
 end Behavioral;
