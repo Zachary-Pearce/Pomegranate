@@ -21,20 +21,20 @@ this repository. To get started, I reccomend that you start familiarising yourse
 - Link 3 (configuring Pomegranate)
 - Link 4 (programming Pomegranate)
 
-## What if I don't know VHDL?
-No matter how you stumbled across this repository, if you are using it to learn computer architecture it may seem daunting if you have not learnt VHDL, however
-I wasn't exactly an expert in it until I had really started to learn it during and after my undergraduate thesis. There are resources you can use, if you are a
-university student you will likely have access to textbooks, [such as this one](https://www.amazon.co.uk/Digital-System-Design-VHDL-Zwolinski/dp/013039985X) which
-I used to learn VHDL at first and also has a simple processor example you can follow.
-
-Every piece of VHDL has been well commented explaining why the code is written how it is with the intent of helping you where it can. In terms of software, Vivado
-was used to program and test all of Pomegranate and there is a free version available [here](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado/vivado-buy.html). Lastly, if you experience any difficulties, open an issue.
-
 ## Can I use this design in my projects?
 If you think that this design would be a good fit for your project then please use it. As it is made to be easily edited, you should be able to adapt it
 for whatever purpose you want.
 
 Compatibility with every FPGA development board is not guaranteed, but Pomegranate is designed to be compatible with as many Xilinx FPGAs as possible.
+
+### How to use
+There are two main parts to this design.
+* The package.
+* The modules.
+
+The modules are instanced in a structurally modelled top level file and connected together. You can write your own top file for this purpose however there is one provided [here](https://github.com/Zachary-Pearce/Pomegranate/tree/main/src/Top).
+
+The package defines the instruction set and formats as well as several helper functions to allow you to more easily define your instruction set and implement it in the control unit. The package can be found [here](https://github.com/Zachary-Pearce/Pomegranate/tree/main/Package) and is already configured for the base version of Pomegranate.
 
 # Contribution
 Please read the [contribution guidelines](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting, as long as these
