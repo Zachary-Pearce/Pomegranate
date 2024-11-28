@@ -16,7 +16,7 @@ Where source_out outputs the contents of the source register and target_out outp
 
 This is done so that ALU operations on register contents don't have to use the databus until the result is output. This allows for a single clock cycle operation from fetching data to writing back to the register file.
 
-The other output port is the data_bus, only the source register is sent through this port as it is assumed that the data bus is one word wide and therefore would be unable to fit both registers on the bus.
+The other output port is the data_bus, only the source register is sent through this port as it is assumed that the data bus is one word wide and therefore you would be unable to fit the contents of both registers (source and target) on the bus.
 
 ```VHDL
 data_bus <= registers(to_integer(unsigned(source_register)))(n-1 downto 0) when data_bus_R_file = '1' else (others => 'Z');
@@ -29,7 +29,7 @@ The register file can be scaled by changing the width of the register addresses 
 k: natural := 5
 ```
 
-The nubmer of registers in the register file can be worked out using the follow equation:
+The number of registers in the register file can be worked out using the follow equation:
 
 ```math
 \text{Register No.} = 2^{k}
