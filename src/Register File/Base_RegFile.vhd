@@ -45,6 +45,6 @@ begin
 	
 	--OUTPUT PART
 	source_out <= registers(to_integer(unsigned(source_register)))(n-1 downto 0);
-    target_out <= registers(to_integer(unsigned(target_register)))(n-1 downto 0);
-    data_bus <= registers(to_integer(unsigned(source_register)))(n-1 downto 0) when data_bus_R_file = '1' else (others => 'Z');
+	target_out <= registers(to_integer(unsigned(target_register)))(n-1 downto 0);
+	data_bus <= registers(to_integer(unsigned(source_register)))(n-1 downto 0) when data_bus_R_file = '1' else (others => 'Z');
 end architecture regFileRTL;
