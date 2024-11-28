@@ -3,7 +3,7 @@
 ## Design and Justification
 <!-- Please discuss your design here -->
 <!-- Make sure to justify any design choices made where there may be an alternative approach -->
-This is the ALU used in Pomegranates base configuration. It can perform what could could be considered fundamental logic and arithmetic operations with support for immediate addressing. The figure below shows the ALU block diagram.
+This is the ALU used in Pomegranates base configuration. It performs what could be considered fundamental logic and arithmetic operations with support for immediate addressing. The figure below shows the ALU block diagram.
 
 ![ALU block diagram](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/Basic_ALU_Block_Diagram.jpg)
 
