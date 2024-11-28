@@ -38,4 +38,4 @@ The nubmer of registers in the register file can be worked out using the follow 
 In the example value of k given above, this would be $2^{5} = 32$ registers. In the base configuration of Pomegranate, $k = 3$ and therefore there are $2^{3} = 8$ registers.
 
 ## Testing
-Information surrounding the testing of this module can be found [here](https://github.com/Zachary-Pearce/Pomegranate/blob/main/[insert testing README directory here]).
+Information surrounding the testing of this module can be found [here](https://github.com/Zachary-Pearce/Pomegranate/blob/main/Register%20File).
