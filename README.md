@@ -36,6 +36,11 @@ The modules are instanced in a structurally modelled top level file and connecte
 
 The package defines the instruction set and formats as well as several helper functions to allow you to more easily define your instruction set and implement it in the control unit. The package can be found [here](https://github.com/Zachary-Pearce/Pomegranate/tree/main/Package) and is already configured for the base version of Pomegranate.
 
+## Repository Structure
+The modules are stored in the [src](https://github.com/Zachary-Pearce/Pomegranate/tree/main/src) folder. Each module has it's own sub folder with the code and a README describing it's design.
+
+Testbench files are stored in the [testing](https://github.com/Zachary-Pearce/Pomegranate/tree/main/testing) folder. Each module that has had a testbench simulation conducted has a sub folder which contains the testbench code file and a README that describes the tests conducted as well as resource utilisation, timing reports, the maximum clock frequency determined by the critical path, and compatible FPGA platforms.
+
 # Contribution
 Please read the [contribution guidelines](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting, as long as these
 guidlines are followed there is a near 100% chance that your pull request will be accepted. You can also contribute by answering issues.
