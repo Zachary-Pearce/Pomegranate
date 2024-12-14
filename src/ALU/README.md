@@ -5,7 +5,7 @@
 <!-- Make sure to justify any design choices made where there may be an alternative approach -->
 This is the ALU used in Pomegranates base configuration. It performs what could be considered fundamental logic and arithmetic operations with support for immediate addressing. The figure below shows the ALU block diagram.
 
-![ALU block diagram](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/Basic_ALU_Block_Diagram.jpg)
+![ALU block diagram](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/ALU_Block_Diagram.png)
 
 This is a purely combinational module that is designed to perform the following fundamental logic and arithemetic operations:
 * add
