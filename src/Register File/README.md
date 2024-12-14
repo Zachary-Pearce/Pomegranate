@@ -29,7 +29,7 @@ The register file can be scaled by changing the width of the register addresses 
 k: natural := 5
 ```
 
-The number of registers in the register file can be worked out using the follow equation:
+The number of registers in the register file can be worked out using the following equation:
 
 ```math
 \text{Register No.} = 2^{k}
