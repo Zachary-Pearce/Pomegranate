@@ -18,7 +18,7 @@ This is a purely combinational module that is designed to perform the following 
 
 We consider fundamental operations as those functions that require no extra logic except the simple machine required to perform it, for example multipliers require both a simple machine to perform the multiplication and a way to deal with the extra bits that we may not be able to store as the output width will be the sum of the input widths.
 
-These fundamental operations were chosen because they are common and can be used to implement more complex functions, especially for arithmetic, for example multiplication can be implemented through repeated addition.
+These fundamental operations were chosen because they are common and can be used to implement more complex functions.
 
 > [!NOTE]
 > Simple machines are standard designs that are often put together to form a larger system. For example, an ALU in modern CPUs is made of simple machines that each perform one kind of arithmetic.
