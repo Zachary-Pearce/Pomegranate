@@ -11,7 +11,7 @@ entity ALU is
         ALU_EN, ALU_IMM: in std_logic;
         ALU_OP: in std_logic_vector(2 downto 0);
         Rs, Rt, Immediate: in std_logic_vector(n-1 downto 0);
-        Z: out std_logic_vector(n-1 downto 0);
+        result_out: out std_logic_vector(n-1 downto 0);
         C_flag, Z_flag, N_flag, P_flag: out std_logic
     );
 end entity ALU;
@@ -39,9 +39,9 @@ begin
                 <= '0' & std_logic_vector(shift_right(unsigned(source), 1)) when ALU_OP = "111";
     
     --OUTPUT PART
-    Z <= result(n-1 downto 0) when ALU_EN = '1' else (others => 'Z');
+    result_out <= result(n-1 downto 0) when ALU_EN = '1' else (others => 'Z');
     Z_flag <= '1' when result(n-1 downto 0) = zeros else '0';
-    N_flag <= result(n-1);
-    P_flag <= not result(n-1);
-    C_flag <= result(n);
+    N_flag <= result(n-1); --2's complement, if the MSB is set then the result is negative
+    P_flag <= not result(n-1); --2's complement, if the MSB is cleared then the result is positive
+    C_flag <= result(n); --the last bit of the result signal is the carry
 end ALU_RTL;
