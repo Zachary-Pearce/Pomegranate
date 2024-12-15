@@ -35,8 +35,8 @@ begin
                 <= '0' & source or '0' & target when ALU_OP = "011",
                 <= '0' & source xor '0' & target when ALU_OP "100",
                 <= '0' & (not source) when ALU_OP = "101",
-                <= '0' & std_logic_vector(shift_left(unsigned(source), 1)) when ALU_OP = "110",
-                <= '0' & std_logic_vector(shift_right(unsigned(source), 1)) when ALU_OP = "111";
+                <= std_logic_vector(shift_left(unsigned('0' & source), 1)) when ALU_OP = "110",
+                <= std_logic_vector(shift_right(unsigned('0' & source), 1)) when ALU_OP = "111";
     
     --OUTPUT PART
     result_out <= result(n-1 downto 0) when ALU_EN = '1' else (others => 'Z');
