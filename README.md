@@ -14,12 +14,16 @@ by meeting you where you're at and scaling with you as you tackle progessively c
 build on it brick by brick with a real practical example.
 
 # Welcome
-First of all, welcome to Pomegranate. This project started as my undergraduate thesis, I wanted it to become more than I could make it on my own so I started
-this repository. To get started, I reccomend that you start familiarising yourself with the wiki which covers:
+First of all, welcome to Pomegranate. I reccomend that you start familiarising yourself with the wiki which will be your main source of information about the project as well as holding various lessons for you to follow. I would start by reading the following:
 - Link 1 (Pomegranate's mission, and how it seeks to achieve it)
 - Link 2 (architecture details; instruction set, base architecture)
 - Link 3 (configuring Pomegranate)
 - Link 4 (programming Pomegranate)
+
+## Repository Structure
+The modules are stored in the [src](https://github.com/Zachary-Pearce/Pomegranate/tree/main/src) folder. Each module has it's own sub folder with the code and a README describing it's design.
+
+Testbench files are stored in the [testing](https://github.com/Zachary-Pearce/Pomegranate/tree/main/testing) folder. Each module that has had a testbench simulation conducted has a sub folder which contains the testbench code file and a README that describes the tests conducted as well as resource utilisation, timing reports and resulting maximum clock frequency, and compatible FPGA platforms.
 
 ## Can I use this design in my projects?
 If you think that this design would be a good fit for your project then please use it. As it is made to be easily edited, you should be able to adapt it
@@ -32,14 +36,9 @@ There are two main parts to this design.
 * The package.
 * The modules.
 
-The modules are instanced in a structurally modelled top level file and connected together. You can write your own top file for this purpose however there is one provided [here](https://github.com/Zachary-Pearce/Pomegranate/tree/main/src/Top).
+The modules are instanced in a structurally modelled top level file and connected together. You can write your own top file for this purpose however there is one provided [here](https://github.com/Zachary-Pearce/Pomegranate/tree/main/src/Top) for the base architecture.
 
 The package defines the instruction set and formats as well as several helper functions to allow you to more easily define your instruction set and implement it in the control unit. The package can be found [here](https://github.com/Zachary-Pearce/Pomegranate/tree/main/Package) and is already configured for the base version of Pomegranate.
-
-## Repository Structure
-The modules are stored in the [src](https://github.com/Zachary-Pearce/Pomegranate/tree/main/src) folder. Each module has it's own sub folder with the code and a README describing it's design.
-
-Testbench files are stored in the [testing](https://github.com/Zachary-Pearce/Pomegranate/tree/main/testing) folder. Each module that has had a testbench simulation conducted has a sub folder which contains the testbench code file and a README that describes the tests conducted as well as resource utilisation, timing reports, the maximum clock frequency determined by the critical path, and compatible FPGA platforms.
 
 # Contribution
 Please read the [contribution guidelines](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting, as long as these
