@@ -14,7 +14,7 @@ by meeting you where you're at and scaling with you as you tackle progessively c
 build on it brick by brick with a real practical example.
 
 # Welcome
-First of all, welcome to Pomegranate. I reccomend that you start familiarising yourself with the wiki which will be your main source of information about the project as well as holding various lessons for you to follow. I would start by reading the following:
+First of all, welcome to Pomegranate. I reccomend that you start familiarising yourself with the wiki which will be your main source of information about the project as well as holding various lessons for you to follow. I would reccomend you start by reading the following:
 - Link 1 (Pomegranate's mission, and how it seeks to achieve it)
 - Link 2 (architecture details; instruction set, base architecture)
 - Link 3 (configuring Pomegranate)
