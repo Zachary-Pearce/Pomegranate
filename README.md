@@ -9,27 +9,22 @@
     <img src="https://img.shields.io/badge/Vivado-2024.1-green" alt="Vivado 2024.1">
 </p>
 
-Pomegranate is an open source scalable and portable soft-core processor written in VHDL, it's goal is to teach you the fundamentals behind computer architecture
-by meeting you where you're at and scaling with you as you tackle progessively complex concepts. This allows you to build a solid foundation of knowledge and
-build on it brick by brick with a real practical example.
+Pomegranate is an open source scalable and portable soft-core processor written in VHDL, it's goal is to teach you the fundamentals behind computer architecture by meeting you where you're at and scaling with you as you tackle progessively complex concepts. This allows you to build a solid foundation of knowledge and build on it brick by brick with a real practical example.
 
 # Welcome
-First of all, welcome to Pomegranate. I reccomend that you start familiarising yourself with the wiki which will be your main source of information about the project as well as holding various lessons for you to follow. I would reccomend you start by reading the following:
-- Link 1 (Pomegranate's mission, and how it seeks to achieve it)
-- Link 2 (architecture details; instruction set, base architecture)
-- Link 3 (configuring Pomegranate)
-- Link 4 (programming Pomegranate)
+First of all, welcome to Pomegranate, We reccomend that you start by familiarising yourself with the [wiki](https://github.com/Zachary-Pearce/Pomegranate/wiki), the wiki pages will teach you about the Pomegranate base architecture and how to configure it as well as holding various lessons on computer architecture for you to follow.
+
+If you're not sure where to start, you can read about that [here](https://github.com/Zachary-Pearce/Pomegranate/wiki#Where-should-I-start?)
 
 ## Repository Structure
 The modules are stored in the [src](https://github.com/Zachary-Pearce/Pomegranate/tree/main/src) folder. Each module has it's own sub folder with the code and a README describing it's design.
 
-Testbench files are stored in the [testing](https://github.com/Zachary-Pearce/Pomegranate/tree/main/testing) folder. Each module that has had a testbench simulation conducted has a sub folder which contains the testbench code file and a README that describes the tests conducted as well as resource utilisation, timing reports and resulting maximum clock frequency, and compatible FPGA platforms.
+Testbench files are stored in the [testing](https://github.com/Zachary-Pearce/Pomegranate/tree/main/testing) folder. Each module that has had a testbench simulation conducted has a sub folder which contains the testbench and a README that describes the tests conducted as well as resource utilisation, timing reports and resulting maximum clock frequency, and compatible FPGA platforms.
 
 ## Can I use this design in my projects?
-If you think that this design would be a good fit for your project then please use it. As it is made to be easily edited, you should be able to adapt it
-for whatever purpose you want.
+If you think that this design would be a good fit for your project then please use it. As it is made to be easily edited, you should be able to adapt it for whatever purpose you want.
 
-Compatibility with every FPGA development board is not guaranteed, but Pomegranate is designed to be compatible with as many Xilinx FPGAs as possible.
+Compatibility with every FPGA is not guaranteed, but Pomegranate is designed to be compatible with as many Xilinx FPGAs as possible.
 
 ### How to use
 There are two main parts to this design.
@@ -38,11 +33,10 @@ There are two main parts to this design.
 
 The modules are instanced in a structurally modelled top level file and connected together. You can write your own top file for this purpose however there is one provided [here](https://github.com/Zachary-Pearce/Pomegranate/tree/main/src/Top) for the base architecture.
 
-The package defines the instruction set and formats as well as several helper functions to allow you to more easily define your instruction set and implement it in the control unit. The package can be found [here](https://github.com/Zachary-Pearce/Pomegranate/tree/main/Package) and is already configured for the base version of Pomegranate.
+The package is the main source of all configuration in a deployment of Pomegranate. It defines the instruction set and formats as well as several helper functions to allow the system to be more easily scaled. A package pre-configured for the base architecture can be found [here](https://github.com/Zachary-Pearce/Pomegranate/tree/main/Package) however if you want to configure your own, the [Configuring Pomegranate](https://github.com/Zachary-Pearce/Pomegranate/wiki/Configuring-Pomegranate) wiki page will show you how.
 
 # Contribution
-Please read the [contribution guidelines](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting, as long as these
-guidlines are followed there is a near 100% chance that your pull request will be accepted. You can also contribute by answering issues.
+Please read the [contribution guidelines](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting. You can also contribute to the project by answering issues.
 
 # Change Log
 See the [Releases](https://github.com/Zachary-Pearce/Pomegranate/releases/) page. I also post about interesting discoveries and major changes
