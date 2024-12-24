@@ -14,7 +14,7 @@ Pomegranate is an open source scalable and portable soft-core processor written 
 # Welcome
 First of all, welcome to Pomegranate, We reccomend that you start by familiarising yourself with the [wiki](https://github.com/Zachary-Pearce/Pomegranate/wiki), the wiki pages will teach you about the Pomegranate base architecture and how to configure it as well as holding various lessons on computer architecture for you to follow.
 
-If you're not sure where to start, you can read about that [here](https://github.com/Zachary-Pearce/Pomegranate/wiki#where-should-i-start?)
+If you're not sure where to start, you can read about that [here](https://github.com/Zachary-Pearce/Pomegranate/wiki#where-should-i-start)
 
 ## Repository Structure
 The modules are stored in the [src](https://github.com/Zachary-Pearce/Pomegranate/tree/main/src) folder. Each module has it's own sub folder with the code and a README describing it's design.
