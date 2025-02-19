@@ -28,7 +28,33 @@ At a minimum, there must be enough addressable registers to support the three li
 
 ### Port Inputs Logic
 
+### Configuration Rules
+Because each of the registers in a GPIO controller have a special purpose, they make scaleability tricky because we can't just increase the size of the register file and put them wherever we want. For example, we need to reference each of the DDRs so we need to know where they are in the register file. As such, some rules have to be followed in order for the design to keep its scaleability.
+
+1. `PIN_NUM` must be greater than or equal to the `WORD_WIDTH`.
+2. `REGISTER_ADDRESS_WIDTH` must support enough registers for each port to have an input buffer, output buffer, and DDR.
+3. `DDR_REG_LOCATION` must indicate a DDR index that is after all input/output ports.
+4. All DDRs must be contiguous in the register file, starting with the one marked by `DDR_REG_LOCATION`.
+5. All input buffers must be the first reigsters in the file and are contiguous in numerical order (e.g. Port 1 then Port 2 or Port A then Port B).
+6. Output buffers come immediately after the input buffers are contiguous in numerical order.
+
+The table below shows an example of a valid configuration where:
+* `WORD_WIDTH` = 8
+* `PIN_NUM` = 16
+* `DDR_REG_LOCATION` = 4
+* `REGISTER_ADDRESS_WIDTH` = 3
+
+| RS    | Name      | Description               |
+| :---: | --------- | ------------------------- |
+| 0     | A_in_reg  | Input buffer A            |
+| 1     | B_in_reg  | Input buffer B            |
+| 2     | A_out_reg | Output buffer A           |
+| 3     | B_out_reg | Output buffer B           |
+| 4     | DDRA      | Data direction register A |
+| 5     | DDRB      | Data direction register B |
+
 ### Limitations
+
 
 ## Testing
 Information surrounding the testing of this module can be found [here](https://github.com/Zachary-Pearce/Pomegranate/blob/main/testing/IO/GPIO%20Controller).
