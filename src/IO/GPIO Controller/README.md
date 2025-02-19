@@ -25,8 +25,33 @@ $$\text{Register Num.} = 2^{\text{REGISTER ADDRESS WIDTH}}$$
 At a minimum, there must be enough addressable registers to support the three listed registers for each port.
 
 ### Port Output Logic
+The following code shows the generate statement that creates the output logic. It loops through each port and their pins, creating a tri-state connection from the output buffer to the relevant pin where the enable signal is provided by the data direction register for that port.
+
+```VHDL
+gen_output_port: for ii in 0 to (PIN_NUM/WORD_WIDTH)-1 generate
+    gen_output_pin: for jj in 0 to WORD_WIDTH-1 generate
+        pins(jj+(ii*WORD_WIDTH)) <= IO_registers(ii+PIN_NUM/WORD_WIDTH)(jj) when IO_registers(ii+DDR_REG_LOCATION)(jj) = '1' else 'Z';
+    end generate gen_output_pin;
+end generate gen_output_port;
+```
 
 ### Port Input Logic
+
+```VHDL
+if (CS = '1') then
+    ...
+else
+    for ii in 0 to (PIN_NUM/WORD_WIDTH)-1 loop
+        for jj in 0 to WORD_WIDTH-1 loop
+            if IO_registers(ii+DDR_REG_LOCATION)(jj) = '0' then
+                IO_registers(ii)(jj) <= pins(jj+(ii*WORD_WIDTH));
+            else
+                IO_registers(ii)(jj) <= '0';
+            end if;
+        end loop;
+    end loop;
+end if;
+```
 
 ### Configuration Rules
 Because each of the registers in a GPIO controller have a special purpose, they make scaleability tricky because we can't just increase the size of the register file and put them wherever we want. For example, we need to reference each of the DDRs so we need to know where they are in the register file. As such, some rules have to be followed in order for the design to keep its scaleability.
