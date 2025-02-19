@@ -36,6 +36,7 @@ end generate gen_output_port;
 ```
 
 ### Port Input Logic
+The input logic is done sequentially within the process `s0`. When the `CS` input is driven low, the bits of the input buffers are written with the values of the input pins when the relevant bit of the data direction register is cleared. If any of the other pins in the port are set to be outputs (according to the DDR) then those corresponding buffer bits are cleared rather than written to.
 
 ```VHDL
 if (CS = '1') then
