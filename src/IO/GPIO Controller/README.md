@@ -26,7 +26,7 @@ At a minimum, there must be enough addressable registers to support the three li
 
 ### Port Output Logic
 
-### Port Inputs Logic
+### Port Input Logic
 
 ### Configuration Rules
 Because each of the registers in a GPIO controller have a special purpose, they make scaleability tricky because we can't just increase the size of the register file and put them wherever we want. For example, we need to reference each of the DDRs so we need to know where they are in the register file. As such, some rules have to be followed in order for the design to keep its scaleability.
@@ -57,6 +57,8 @@ The table below shows an example of a valid configuration where:
 
 ### Limitations
 
+* The input buffers cannot read from input pins while other registers are being accessed. In order for an input pins value to be stored in an input buffer, `CS` must be driven low.
+* When a value is written to an output register, it will be present at the output pins in the next clock cycle.
 
 ## Testing
 Information surrounding the testing of this module can be found [here](https://github.com/Zachary-Pearce/Pomegranate/blob/main/testing/IO/GPIO%20Controller).
