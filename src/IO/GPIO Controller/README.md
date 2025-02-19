@@ -13,7 +13,7 @@ The first three of these parameters are defined by a generic map where as `DDR_R
 
 $$\text{Port Num.} = \frac{\text{PIN NUM}}{\text{WORD WIDTH}}$$
 
-For each port, there are various registers:
+For each port, there are various registers, such as:
 * Input buffer
 * Output buffer
 * DDR
