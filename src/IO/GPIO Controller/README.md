@@ -52,6 +52,8 @@ The table below shows an example of a valid configuration where:
 | 3     | B_out_reg | Output buffer B           |
 | 4     | DDRA      | Data direction register A |
 | 5     | DDRB      | Data direction register B |
+| 6     | ...       | ...                       |
+| 7     | ...       | ...                       |
 
 ### Limitations
 
