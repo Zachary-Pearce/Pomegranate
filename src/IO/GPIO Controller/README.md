@@ -22,7 +22,7 @@ However, there can be more control registers for the purpose of other functions 
 
 $$\text{Register Num.} = 2^{\text{REGISTER ADDRESS WIDTH}}$$
 
-At a minimum, there must be enough addressable registers to support the three listed reigsters for each port.
+At a minimum, there must be enough addressable registers to support the three listed registers for each port.
 
 ### Port Output Logic
 
