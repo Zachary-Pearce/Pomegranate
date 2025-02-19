@@ -11,7 +11,7 @@ This module is a scaleable GPIO controller that has input/output capabilities on
 
 The first three of these parameters are defined by a generic map where as `DDR_REG_LOCATION` is defined through a constant. Each port has an input and an output buffer that is `WORD_WIDTH` wide. Where the number of ports is given by the equation:
 
-$$\text{Port Num.} = \frac{\text{PIN_NUM}}{\text{WORD_WIDTH}}$$
+$$\text{Port Num.} = \frac{\text{PIN NUM}}{\text{WORD WIDTH}}$$
 
 For each port, there are various registers:
 * Input buffer
@@ -20,7 +20,7 @@ For each port, there are various registers:
 
 However, there can be more control registers for the purpose of other functions such as determining interrupt behaviour. The `REGISTER_ADDRESS_WIDTH` is used to determine the maximum number of addressable registers in the GPIO controller. Following the equation:
 
-$$\text{Register Num.} = 2^{\text{REGISTER_ADDRESS_WIDTH}}$$
+$$\text{Register Num.} = 2^{\text{REGISTER ADDRESS WIDTH}}$$
 
 ### Port Output Logic
 
