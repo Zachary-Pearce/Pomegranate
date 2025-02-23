@@ -1,81 +1,24 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+----------------------------------------------------------------------------------
+-- Engineer: Zachary Pearce
+-- 
+-- Create Date: 23/02/2025
+-- Module Name: pomegranate_helpers
+-- Project Name: Pomegranate
+-- Description: Contains various helper functions for use with Pomegranate configured architectures
+-- 
+-- Dependencies: pomegranate_conf
+-- 
+-- Revision: 1.0
+-- Revision Date: 23/02/2025
+-- Notes: File Created
+----------------------------------------------------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.pomegranate_conf.all;
 
---package declarations
-package pomegranate_conf is
-    ------ VARIABLES ------
-    
-    constant word_w: NATURAL := 8; --the width of the data bus
-    constant instruction_w: NATURAL := 24; --the width of instructions
-    constant op_w: NATURAL := 5;    --the number of bits reserved for the opcode in instructions
-    constant Raddr_w: NATURAL := 3; --the number of bits reserved for register addresses
-    constant Maddr_w: NATURAL := 8; --the number of bits reserved for memory addresses
-    constant Iaddr_w: NATURAL := 8;--the number of bits reserved for instruction addresses
-    
-    --opcode mnemonics
-    type opcode is
-    (
-        NOP,
-        SIE,
-        CIE,
-        SCF,
-        CCF,
-        ADD,
-        SUB,
-        DAND,
-        DOR,
-        DNOT,
-        DXOR,
-        ADDI,
-        SUBI,
-        ANDI,
-        ORI,
-        LSL,
-        LSR,
-        CPY,
-        LDR,
-        LDRI,
-        STR,
-        STRI,
-        PUSH,
-        POP,
-        BRA,
-        BRZ,
-        BRC,
-        BRN,
-        BRP,
-        CALL,
-        RET,
-        RETI
-    );
-    
-    --operands
-    type operands is
-    (
-        Rd,
-        Rs,
-        Rt,
-        Data_Address,
-        Instruction_Address,
-        Immediate
-    );
-    
-    --instruction formats
-    type formats is
-    (
-        register_format,
-        branch_format,
-        load_format,
-        store_format
-    );
-    
-    ------ FUNCTIONS AND CONSTANTS ------
-
-    --blank constant, n-bits of zero's
-    -- ideal for resetting large memories
-    constant zeros: std_logic_vector(word_w-1 downto 0) := (others => '0');
-
+package pomegranate_helpers is
     --INSTRUCTION FORMAT CHECK FUNCTIONS
 
     -- register format check
@@ -100,73 +43,9 @@ package pomegranate_conf is
     
     -- convert from opcode mnemonic to standard logic vector
     function op2slv (op: in opcode) return std_logic_vector;
-end package pomegranate_conf;
+end package pomegranate_helpers;
 
-
---definition of package declarations
-package body pomegranate_conf is
-    ------ VARIABLES ------
-    
-    --the array used to translate a standard logic vector to it's respective opcode mnemonic
-    type optable is array (opcode) of std_logic_vector(op_w-1 downto 0);
-    constant trans_table: optable := (
-        "00000",
-        "00001",
-        "00010",
-        "00011",
-        "00100",
-        "00101",
-        "00110",
-        "00111",
-        "01000",
-        "01001",
-        "01010",
-        "01011",
-        "01100",
-        "01101",
-        "01110",
-        "01111",
-        "10000",
-        "10001",
-        "10010",
-        "10011",
-        "10100",
-        "10101",
-        "10110",
-        "10111",
-        "11000",
-        "11001",
-        "11010",
-        "11011",
-        "11100",
-        "11101",
-        "11110",
-        "11111"
-    );
-    
-    --operand MSB index table
-    type operand_table is array (operands) of natural;
-    -- register format
-    constant register_table: operand_table := (
-        18, 10, 13, 0, 0, 7
-    );
-    -- branch format
-    constant branch_table: operand_table := (
-        0, 0, 0, 0, 7, 0
-    );
-    -- load format
-    constant load_table: operand_table := (
-        18, 0, 0, 7, 0, 15
-    );
-    -- store format
-    constant store_table: operand_table := (
-        0, 10, 0, 7, 0, 18
-    );
-    
-    ------ FUNCTIONS ------
-
-    --INSTRUCTION FORMAT CHECK FUNCTION DECLARATIONS
-
+package body pomegranate_helpers is
     -- register format check
     function RFormatCheck (op: in opcode) return std_logic is
     begin
@@ -180,8 +59,7 @@ package body pomegranate_conf is
                 return '0';
         end case;
     end function RFormatCheck;
-
-    -- branch format check
+     -- branch format check
     function BFormatCheck (op: in opcode) return std_logic is
     begin
         case op2slv(op) is
@@ -194,8 +72,7 @@ package body pomegranate_conf is
                 return '0';
         end case;
     end function BFormatCheck;
-
-    -- load format check
+     -- load format check
     function LFormatCheck (op: in opcode) return std_logic is
     begin
         case op2slv(op) is
@@ -208,8 +85,7 @@ package body pomegranate_conf is
                 return '0';
         end case;
     end function LFormatCheck;
-
-    -- store format check
+     -- store format check
     function SFormatCheck (op: in opcode) return std_logic is
     begin
         case op2slv(op) is
@@ -222,8 +98,9 @@ package body pomegranate_conf is
                 return '0';
         end case;
     end function SFormatCheck;
-
-    --OPCODE FUNCTIONS
+    
+    
+    ---- OPCODE FUNCTIONS ----
     
     -- address index return function
     function AddressIndex (instruction_format: in formats := branch_format; operand: in operands := Rs) return NATURAL is
@@ -263,4 +140,4 @@ package body pomegranate_conf is
     begin
         return trans_table(op);
     end function op2slv;
-end package body pomegranate_conf;
+end package body pomegranate_helpers;
