@@ -2,9 +2,9 @@
 -- Engineer: Zachary Pearce
 -- 
 -- Create Date: 23/02/2025
--- Module Name: pomegranate_conf
+-- Module Name: pomegranate_inst_conf
 -- Project Name: Pomegranate
--- Description: Define parameters that are used to modify Pomegranate configured architectures
+-- Description: Define parameters that are used to modify the instruction set architecture of Pomegranate configured architectures
 -- 
 -- Dependencies: NA
 -- 
