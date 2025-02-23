@@ -18,7 +18,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 
 --package declarations
-package pomegranate_conf is
+package pomegranate_inst_conf is
     ------ VARIABLES ------
     
     constant word_w: NATURAL := 8; --the width of the data bus
@@ -84,11 +84,11 @@ package pomegranate_conf is
         load_format,
         store_format
     );
-end package pomegranate_conf;
+end package pomegranate_inst_conf;
 
 
 --definition of package declarations
-package body pomegranate_conf is
+package body pomegranate_inst_conf is
     ------ VARIABLES ------
     
     --the array used to translate a standard logic vector to it's respective opcode mnemonic
@@ -146,4 +146,4 @@ package body pomegranate_conf is
     constant store_table: operand_table := (
         0, 10, 0, 7, 0, 18
     );
-end package body pomegranate_conf;
+end package body pomegranate_inst_conf;
