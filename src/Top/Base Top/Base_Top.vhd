@@ -21,7 +21,8 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use WORK.pomegranate_conf.ALL;
+use WORK.pomegranate_inst_conf.ALL;
+use WORK.pomegranate_memory_map_conf.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
