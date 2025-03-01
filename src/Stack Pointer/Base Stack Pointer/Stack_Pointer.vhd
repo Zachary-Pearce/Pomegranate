@@ -1,6 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
+use WORK.pomegranate_memory_map.ALL;
 
 entity Stack_Pointer is
     generic (
@@ -16,7 +17,7 @@ end Stack_Pointer;
 architecture Behavioral of Stack_Pointer is
     --CONSTANTS
     -- starting address of the stack in main memory
-    constant starting_address: unsigned(a-1 downto 0) := "00001111"; --start at address 15
+    constant starting_address: unsigned(a-1 downto 0) := MEMORY_PARTITION_ADDRESS(stack); --start at address 15
     --stack pointer register
     signal pointer_reg: unsigned(a-1 downto 0);
     --next pointer value
