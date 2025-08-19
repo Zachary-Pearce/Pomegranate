@@ -3,39 +3,37 @@
 ## Design and Justification
 <!-- Please discuss your design here -->
 <!-- Make sure to justify any design choices made where there may be an alternative approach -->
-The register file is a bank of registers with 2 read ports and 1 write port. This allows a source and target register to be read from at the same time as a desintation register is written to.
+The register file is a bank of registers with 2 read ports and 1 write port. This allows a source and target register to be read from at the same time as a destination register is written to. This particular register file is designed for single cycle operation.
 
-The read registers can be output through multiple ports, the source_out and target_out ports are meant to be connected directly to an ALUs input.
+The source register can be output through multiple ports:
+1. `source_out`
+2. `data_bus`
 
-```VHDL
-source_out <= registers(to_integer(unsigned(source_register)))(n-1 downto 0);
-target_out <= registers(to_integer(unsigned(target_register)))(n-1 downto 0);
-```
-
-Where source_out outputs the contents of the source register and target_out outputs the contents of the target register.
-
-This is done so that ALU operations on register contents don't have to use the databus until the result is output. This allows for a single clock cycle operation from fetching data to writing back to the register file.
-
-The other output port is the data_bus, only the source register is sent through this port as it is assumed that the data bus is one word wide and therefore you would be unable to fit the contents of both registers (source and target) on the bus.
+The target register is output through the `target_out` port. This behaviour is described by the output part shown below.
 
 ```VHDL
-data_bus <= registers(to_integer(unsigned(source_register)))(n-1 downto 0) when data_bus_R_file = '1' else (others => 'Z');
+--OUTPUT PART
+source_out <= registers(to_integer(unsigned(source_register)))(WORD_WIDTH-1 downto 0);
+target_out <= registers(to_integer(unsigned(target_register)))(WORD_WIDTH-1 downto 0);
+data_bus <= registers(to_integer(unsigned(source_register)))(WORD_WIDTH-1 downto 0) when data_bus_R_file = '1' else (others => 'Z');
 ```
 
-### Scalability
-The register file can be scaled by changing the width of the register addresses (denoted by the generic "k").
+This setup is used so that ALU operations on register contents don't have to use the `data_bus` until the result is output. This allows for a single clock cycle operation from fetching data to writing back to the register file.
 
-```VHDL
-k: natural := 5
-```
+The `data_bus` is only driven by the source register as it is assumed that the registers and `data_bus` are both one word wide. However, this logic can be changed to be driven by both registers if this is not the case.
+
+## Configuration
+The register file can be configured using the following parameters:
+* `WORD_WIDTH` - Determines the width of the registers and `data_bus` port.
+* `REG_ADDRESS_WIDTH` - Determines the width of the register addresses.
 
 The number of registers in the register file can be worked out using the following equation:
 
 ```math
-\text{Register No.} = 2^{k}
+\text{Register No.} = 2^{\text{REG ADDRESS WIDTH}}
 ```
 
-In the example value of k given above, this would be $2^{5} = 32$ registers. In the base configuration of Pomegranate, $k = 3$ and therefore there are $2^{3} = 8$ registers.
+For the default value of `REG_ADDRESS_WIDTH` (5), this would be $2^{5} = 32$ registers.
 
 ## Testing
 Information surrounding the testing of this module can be found [here](https://github.com/Zachary-Pearce/Pomegranate/blob/main/Register%20File).
