@@ -23,7 +23,7 @@ These functions were chosen to be implemented because they don't require multipl
 > [!NOTE]
 > Simple machines are standard designs that are often put together to form a larger system. For example, an ALU in modern CPUs can be made of simple machines that each perform one kind of arithmetic.
 
-## Flag Calculation
+### Flag Calculation
 The following code calculates the new value of several status flags after an ALU operation.
 
 ```VHDL
