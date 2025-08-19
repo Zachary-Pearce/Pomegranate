@@ -7,7 +7,7 @@ This ALU is designed to help build understanding of how various logical and arit
 
 We consider fundamental operations as those functions that require no extra logic except the simple machine required to perform it. For example, the multiplication of two 8-bit numbers results in a 16-bit number. Therefore, multiplication requires both the simple machine that performs it and logic to deal with the extra bits that we may not be able to store in one address space.
 
-![ALU Block Diagram](images/ALU_Block_Diagram.png)
+<img src="images/ALU_Block_Diagram.png">
 
 This is a purely combinational module that can perform the following operations:
 * add
