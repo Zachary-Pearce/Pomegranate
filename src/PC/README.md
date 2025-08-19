@@ -46,13 +46,13 @@ counter_reg <= counter_next;
 On any given clock cycle, this will use the old value of `counter_next`, meaning this line assigns `counter_reg` the current value of the counter and on the following clock cycle, the new value of `counter_next` will have settled and be assigned to `counter_reg`.
 
 ### Output Logic
-In order to support subroutine calls and returns, there needs to be a way to put the value of the program counter on the data bus so it can be stored in the stack.
+In order to support subroutine calls and returns, there needs to be a way to put the value of the program counter on the data bus so it can be stored on top of a stack.
 
 ```VHDL
 data_bus <= std_logic_vector(counter_reg+1) when DAT_PC = '1' else (others => 'Z');
 ```
 
-This is done as above. We output an incremented `counter_reg` here because otherwise when returning from a subroutine we would return to and run the line where we called the subroutine. Creating an infinite loop.
+This is done as above. We output an incremented `counter_reg` here because otherwise when returning from a subroutine we would return to and run the line where we called the subroutine. Creating an infinite loop. If this logic is not required, it can be safely removed.
 
 ## Configuration
 This module offers limited configuration, the `a` parameter represents the width of the program counter and can be changed to match the width of the relevant memory address space. This can be set to any value.
