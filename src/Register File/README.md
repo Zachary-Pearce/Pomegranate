@@ -18,7 +18,7 @@ target_out <= registers(to_integer(unsigned(target_register)))(WORD_WIDTH-1 down
 data_bus <= registers(to_integer(unsigned(source_register)))(WORD_WIDTH-1 downto 0) when data_bus_R_file = '1' else (others => 'Z');
 ```
 
-This setup is used so that ALU operations on register contents don't have to use the `data_bus` until the result is output. This allows for a single clock cycle operation from fetching data to writing back to the register file.
+This setup is used so that ALU operations on register contents don't have to use the data bus until the result is output. This allows for a single clock cycle operation from fetching data to writing back to the register file.
 
 The `data_bus` is only driven by the source register as it is assumed that the registers and `data_bus` are both one word wide. However, this logic can be changed to be driven by both registers if this is not the case.
 
