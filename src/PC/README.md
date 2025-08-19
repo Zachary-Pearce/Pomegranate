@@ -5,7 +5,7 @@
 <!-- Make sure to justify any design choices made where there may be an alternative approach -->
 The program counter (PC) is a register that holds the address of the current instruction being executed.
 
-![Program counter block diagram](https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/Program_Counter_Block_Diagram.png)
+![Program counter block diagram](/images/Program_Counter_Block_Diagram.png)
 
 ### Counter Logic
 This program counter is designed to function within a clock cycle, meaning the value of the program counter must be read at the same time as being incremented. To make this possible two signals were used, counter_reg and counter_next.
@@ -55,6 +55,9 @@ data_bus <= std_logic_vector(counter_reg+1) when DAT_PC = '1' else (others => 'Z
 ```
 
 This is done as above. We output an incremented counter_reg here because otherwise when returning from a subroutine we would return to and run the line where we called the subroutine. Creating an infinite loop.
+
+## Configuration
+This module offers limited configuration, the `a` parameter represents the width of the program counter and can be changed to match the width of the relevant memory address space. This can be changed to any value.
 
 ## Testing
 Information surrounding the testing of this module can be found [here](https://github.com/Zachary-Pearce/Pomegranate/blob/main/testing/PC/).
