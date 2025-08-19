@@ -6,8 +6,6 @@ entity regFile is
     generic (
 		--data bus width
 		WORD_WIDTH: natural := 8;
-		--adress bus width
-		ADDRESS_WIDTH: natural := 32;
 		--register address width
 		REG_ADDRESS_WIDTH: natural := 5
     );
