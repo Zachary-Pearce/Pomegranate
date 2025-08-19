@@ -43,7 +43,7 @@ If we just had `counter_reg`, you can see how each count would take two clock cy
 counter_reg <= counter_next;
 ```
 
-On any given clock cycle, this will use the old value of `counter_next`, essentially meaning this line assigns `counter_reg` the current value of the counter. Then on the next clock cycle, the new value of `counter_next` will have settled and will be assigned to `counter_reg`.
+On any given clock cycle, this will use the old value of `counter_next`, meaning this line assigns `counter_reg` the current value of the counter and on the following clock cycle, the new value of `counter_next` will have settled and will be assigned to `counter_reg`.
 
 ### Output Logic
 In order to support subroutine calls and returns, there needs to be a way to put the value of the program counter on the data bus so it can be stored in the stack.
