@@ -1,43 +1,52 @@
 <p align="center">
     <picture>
-        <source media="(prefers-color-scheme: light)" srcset="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-dark.png" width="250px"/>
-        <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png" width="250px"/>
-        <img src="https://github.com/Zachary-Pearce/Pomegranate/blob/main/images/logo/pomeg-white.png"  style="display: block; width:250px; height:auto;">
+        <source media="(prefers-color-scheme: light)" srcset="images/logo/pomeg-dark.png" width="250px"/>
+        <source media="(prefers-color-scheme: dark)" srcset="images/logo/pomeg-white.png" width="250px"/>
+        <img src="images/logo/pomeg-white.png"  style="display: block; width:250px; height:auto;">
     </picture>
     <br>
     <img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" alt="Contributor Covenant Badge">
-    <img src="https://img.shields.io/badge/Vivado-2024.1-green" alt="Vivado 2024.1">
 </p>
 
-Pomegranate is an open source scalable and portable soft-core processor written in VHDL, it's goal is to teach you the fundamentals behind computer architecture by meeting you where you're at and scaling with you as you tackle progessively complex concepts. This allows you to build a solid foundation of knowledge and build on it brick by brick with a real practical example.
+Pomegranate is an open-source processor design framework for rapid prototyping and education. It provides a library of portable and scalable VHDL modules that allow you to quickly experiment with various architectural designs.
 
-# Welcome
-First of all, welcome to Pomegranate, We reccomend that you start by familiarising yourself with the [wiki](https://github.com/Zachary-Pearce/Pomegranate/wiki), the wiki pages will teach you about the Pomegranate base architecture and how to configure it as well as holding various lessons on computer architecture for you to follow.
+The Pomegranate [wiki](https://github.com/Zachary-Pearce/Pomegranate/wiki) is the ideal place to start. It will guide you through the process of designing your first processor.
 
-If you're not sure where to start, you can read about that [here](https://github.com/Zachary-Pearce/Pomegranate/wiki#where-should-i-start)
+### Features
+Pomegranate provides a highly configurable set of tools to simplify your design process:
+* **Modular VHDL Library** - Build a custom processor by mixing and matching highly configurable modules (e.g. [ALUs](/src/ALU/), [memories](/src/Memory/) , and [I/O](/src/IO/GPIO%20Controller/)).
+* **Configuration Packages** - Easily define and implement core architectural elements using specialised packages:
+    * **[Instruction Set Config](/config/pomegranate_inst_conf.vhd)** - Define your Instruction Set Architecture (ISA), this can be a custom ISA or a pre-defined one like **RISCV**.
+    * **[Memory Map Config](/config/pomegranate_memory_map_conf.vhd)** - Define memory-mapped peripherals and partition your memory.
+* **Portable and Scalable** - All modules are designed to be as compatible with as many FPGA platform as possible, they can also be scaled.
 
-## Repository Structure
-The modules are stored in the [src](https://github.com/Zachary-Pearce/Pomegranate/tree/main/src) folder. Each module has it's own sub folder with the code and a README describing it's design.
+## Installation & Usage
+1. Clone this repository
 
-Testbench files are stored in the [testing](https://github.com/Zachary-Pearce/Pomegranate/tree/main/testing) folder. Each module that has had a testbench simulation conducted has a sub folder which contains the testbench and a README that describes the tests conducted as well as resource utilisation, timing reports and resulting maximum clock frequency, and compatible FPGA platforms.
+```bash
+git clone https://github.com/Zachary-Pearce/Pomegranate.git
+```
 
-## Can I use this design in my projects?
-If you think that this design would be a good fit for your project then please use it. As it is made to be easily edited, you should be able to adapt it for whatever purpose you want.
+2. Import the [configuration packages](/config/) into your project and customise them according to the [configuration guide](https://github.com/Zachary-Pearce/Pomegranate/wiki/Configuring-Pomegranate).
+3. Then import the required [modules](/src/) into your project. please ensure you read each modules documentation (e.g. The [GPIO controller](/src/IO/GPIO%20Controller/)) to understand their configuration rules.
+4. Finally, instance your modules in a top file and connect them together to form your architecture.
 
-Compatibility with every FPGA is not guaranteed, but Pomegranate is designed to be compatible with as many Xilinx FPGAs as possible.
+### Compatibility & Performance
+* You can view the known compatibility of any module in its testing documentation, this may not include your target architecture. However, we welcome [contributions](#contribution) to extend their compatibility. Please ensure any changes do not negatively impact existing compatibility.
+* Pomegranate's modules are well optimised, however they may not meet the strict timing or resource requirements of a production-ready design. Pomegranate is best used for rapid prototyping, designers are encouraged to optimise their designs before production.
 
-### How to use
-There are two main parts to this design.
-* The package.
-* The modules.
+### Where to Get Support
+If you encounter any issues while designing with Pomegranate or have any suggestions, feel free to open an issue.
 
-The modules are instanced in a structurally modelled top level file and connected together. You can write your own top file for this purpose however there is one provided [here](https://github.com/Zachary-Pearce/Pomegranate/tree/main/src/Top) for the base architecture.
+## Contribution
+Contribute to Pomegranate by submitting pull requests for modules or documentation and by answering issues. Please read the [contribution guidelines](/.github/CONTRIBUTING.md) before starting. Here's the basic process:
 
-The package is the main source of all configuration in a deployment of Pomegranate. It defines the instruction set and formats as well as several helper functions to allow the system to be more easily scaled. A package pre-configured for the base architecture can be found [here](https://github.com/Zachary-Pearce/Pomegranate/tree/main/Package) however if you want to configure your own, the [Configuring Pomegranate](https://github.com/Zachary-Pearce/Pomegranate/wiki/Configuring-Pomegranate) wiki page will show you how.
+1. Fork this repository
+2. Clone your fork
+3. Make your changes
+4. Submit your pull request
 
-# Contribution
-Please read the [contribution guidelines](https://github.com/Zachary-Pearce/Pomegranate/blob/main/.github/CONTRIBUTING.md) before starting. You can also contribute to the project by answering issues.
+We expect any pull requests to come with full justification for their changes as well as functional verification at the minimum, so please ensure you have read any relevant documentation first.
 
-# Change Log
-See the [Releases](https://github.com/Zachary-Pearce/Pomegranate/releases/) page. I also post about interesting discoveries and major changes
-on my [LinkedIn](https://www.linkedin.com/in/zachary-pearce-231307243/).
+> [!IMPORTANT]
+> Please ensure you follow the code [Code of Conduct](/.github/CODE_OF_CONDUCT.md) when submitting any pull reuqests or answering issues.
