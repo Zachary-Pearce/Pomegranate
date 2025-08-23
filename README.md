@@ -43,8 +43,9 @@ Contribute to Pomegranate by submitting pull requests for modules or documentati
 
 1. Fork this repository
 2. Clone your fork
-3. Make your changes
-4. Submit your pull request
+3. Create a new branch
+4. Make your changes
+5. Submit your pull request from your forked repository
 
 We expect any pull requests to come with full justification for their changes as well as functional verification at the minimum, so please ensure you have read any relevant documentation first.
 
