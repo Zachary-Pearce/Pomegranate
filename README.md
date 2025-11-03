@@ -31,7 +31,7 @@ git clone https://github.com/Zachary-Pearce/Pomegranate.git
 3. Then import the required [modules](/src/) into your project. please ensure you read each module's documentation (e.g. The [GPIO controller](/src/IO/GPIO%20Controller/)) to understand their configuration rules.
 4. Finally, instantiate your modules in a top file and connect them together to form your architecture.
 
-### :zap: Compatibility & Performance
+## :zap: Compatibility & Performance
 * You can view the known compatibility of any module in its testing documentation, this may not include your target architecture. However, we welcome [contributions](#contribution) to extend their compatibility. Please ensure any changes do not negatively impact existing compatibility.
 * Pomegranate's modules are well optimised, however they may not meet the strict timing or resource requirements of a production-ready design. Pomegranate is best used for rapid prototyping, designers are encouraged to optimise their designs before production.
 
