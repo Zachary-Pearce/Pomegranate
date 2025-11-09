@@ -23,12 +23,12 @@ package pomegranate_inst_conf is
 --VARIABLES                                                 --
 --==========================================================--
 
-    constant word_w: NATURAL := 8; --the width of the data bus
+    constant word_w: NATURAL := 8; --the width of a word
     constant instruction_w: NATURAL := 32; --the width of instructions
     constant op_w: NATURAL := 5;    --the number of bits reserved for the opcode in instructions
     constant Raddr_w: NATURAL := 3; --the number of bits reserved for register addresses
     constant Daddr_w: NATURAL := 8; --the number of bits reserved for data addresses
-    constant Iaddr_w: NATURAL := 8;--the number of bits reserved for instruction addresses
+    constant Iaddr_w: NATURAL := 8; --the number of bits reserved for instruction addresses
     
     type opcodes is
     (
@@ -96,45 +96,24 @@ package body pomegranate_inst_conf is
 --FUNCTIONS                                                 --
 --==========================================================--
 
-    -- register format check
+    ---- FORMAT CHECK FUNCTIONS ----
+    -- these functions determine which instructions are in which format
+    -- these functions must be synthesisable as they will be used in control unit logic
+
+    -- example register format check...
     function RFormatCheck (op: in opcodes) return std_logic is
     begin
         case op2slv(op) is
             --opcodes in this format are as follows: list the opcodes...
-            --replace the binary here
-            when "00000" | "00001" =>
+            when "00000" | "00001" => --replace the binary here
                 return '1';
             when others =>
                 return '0';
         end case;
     end function RFormatCheck;
-    -- branch format check
-    function BFormatCheck (op: in opcodes) return std_logic is
-    begin
-        case op2slv(op) is
-            --opcodes in this format are as follows: list the opcodes...
-            --replace the binary here
-            when "00010" | "00011" =>
-                return '1';
-            when others =>
-                return '0';
-        end case;
-    end function BFormatCheck;
-    -- addressing format check
-    function AFormatCheck (op: in opcodes) return std_logic is
-    begin
-        case op2slv(op) is
-            --opcodes in this format are as follows: list the opcodes...
-            --replace the binary here
-            when "00100" | "00101" =>
-                return '1';
-            when others =>
-                return '0';
-        end case;
-    end function AFormatCheck;
+    --add other format checks here...
     
     ---- OPCODE FUNCTIONS ----
-     
     -- address index return function
     function AddressIndex (instruction_format: in formats := branch_format; operand: in operands := Rs) return NATURAL is
     begin
@@ -149,13 +128,16 @@ package body pomegranate_inst_conf is
         return word_w; --on a fail to fulfill conditions return the word width
     end function AddressIndex;
     
+    ---- NO NEED TO EDIT THESE FUNCTIONS ----
     -- convert from binary (std_logic_vector) to opcode
+    --  convert binary to integer and use it to index opcodes table
     function slv2op (slv: in std_logic_vector) return opcodes is
     begin
         return opcodes'val(to_integer(unsigned(slv)));
     end function slv2op;
 
     -- convert from opcode to binary (std_logic_vector)
+    --  get the index of the given opcode and convert to binary
     function op2slv (op : in opcodes) return std_logic_vector is
     begin
         return std_logic_vector(to_unsigned(opcodes'pos(op), op_w));
