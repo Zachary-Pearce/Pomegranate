@@ -27,7 +27,7 @@ package pomegranate_inst_conf is
     constant instruction_w: NATURAL := 32; --the width of instructions
     constant op_w: NATURAL := 5;    --the number of bits reserved for the opcode in instructions
     constant Raddr_w: NATURAL := 3; --the number of bits reserved for register addresses
-    constant Maddr_w: NATURAL := 8; --the number of bits reserved for memory addresses
+    constant Daddr_w: NATURAL := 8; --the number of bits reserved for data addresses
     constant Iaddr_w: NATURAL := 8;--the number of bits reserved for instruction addresses
     
     type opcodes is
