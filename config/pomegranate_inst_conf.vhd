@@ -61,7 +61,7 @@ package pomegranate_inst_conf is
     --get operand function
     -- gets just the operand from a given standard logic vector
     -- as this forms connections between modules, there should be no decision logic here
-    function GetOperand (slv; in std_logic_vector; instruction_format: in formats; operand: in operands) return std_logic_vector;
+    function GetOperand (slv: in std_logic_vector; instruction_format: in formats; operand: in operands) return std_logic_vector;
     
     --convert from binary (std_logic_vector) to opcode
     -- convert binary to integer and use it to index opcodes table
@@ -118,7 +118,7 @@ package body pomegranate_inst_conf is
     --get operand function
     -- gets just the operand from a given standard logic vector
     -- as this forms connections between modules, there should be no decision logic here
-    function GetOperand (slv; in std_logic_vector; instruction_format: in formats; operand: in operands) return std_logic_vector is
+    function GetOperand (slv: in std_logic_vector; instruction_format: in formats; operand: in operands) return std_logic_vector is
         variable operand_index: natural;
     begin
         operand_index := operand_table(instruction_format, operand);
