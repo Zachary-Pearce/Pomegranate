@@ -56,16 +56,19 @@ package pomegranate_inst_conf is
     -- example register format check
     function RFormatCheck (op: in opcodes) return std_logic;
     -- add other format checks here...
-
-    --OPCODE FUNCTIONS
     
-    -- address index function
-    function AddressIndex (instruction_format: in formats := branch_format; operand: in operands := Rs) return NATURAL;
+    ---- HELPER FUNCTIONS, DO NOT EDIT THESE ----
+    --get operand function
+    -- gets just the operand from a given standard logic vector
+    -- as this forms connections between modules, there should be no decision logic here
+    function GetOperand (slv; in std_logic_vector; instruction_format: in formats; operand: in operands) return std_logic_vector;
     
-    -- convert from standard logic vector to opcode mnemonic
+    --convert from binary (std_logic_vector) to opcode
+    -- convert binary to integer and use it to index opcodes table
     function slv2op (slv: in std_logic_vector) return opcodes;
     
-    -- convert from opcode mnemonic to standard logic vector
+    --convert from opcode to binary (std_logic_vector)
+    -- get the index of the given opcode and convert to binary
     function op2slv (op: in opcodes) return std_logic_vector;
 end package pomegranate_inst_conf;
 
@@ -76,15 +79,19 @@ package body pomegranate_inst_conf is
 --VARIABLES                                                 --
 --==========================================================--
 
-    --operand MSB index table
-    --each operand index table goes in order of operands enum
-    --there is a table for each operand format, 0 used when operand is not present
-    type operand_table is array (operands) of natural;
-    -- example table with 6 operands...
-    constant register_table: operand_table := (
-        11, 27, 23, 0, 7, 0
+    --operand width table
+    type t_operand_width is array (operands) of NATURAL;
+    constant operand_width: t_operand_width := (
+        Raddr_w, Raddr_w, Raddr_w, word_w, word_w
     );
-    --add more tables here...
+
+    --operand MSB index table
+    -- a 2D array with a row for each instruction format
+    -- each row contains the index of the MSB of the operands in the corresponding format
+    type t_operand_table is array (formats, operands) of NATURAL;
+    constant operand_table: t_operand_table := (
+        (11, 27, 23, 0, 7, 0) --register format example
+    );
 
 --==========================================================--
 --FUNCTIONS                                                 --
@@ -107,31 +114,26 @@ package body pomegranate_inst_conf is
     end function RFormatCheck;
     --add other format checks here...
     
-    ---- OPCODE FUNCTIONS ----
-    -- address index return function
-    function AddressIndex (instruction_format: in formats := branch_format; operand: in operands := Rs) return NATURAL is
+    ---- HELPER FUNCTIONS, DO NOT EDIT THESE ----
+    --get operand function
+    -- gets just the operand from a given standard logic vector
+    -- as this forms connections between modules, there should be no decision logic here
+    function GetOperand (slv; in std_logic_vector; instruction_format: in formats; operand: in operands) return std_logic_vector is
+        variable operand_index: natural;
     begin
-        --check which instruction format the opcode is in
-        -- then return the index of the MSB of the target operand
-        case instruction_format is
-            when register_format =>
-                return register_table(operand);
-            --add other format checks here...
-        end case;
-        report "format not found!" severity error;
-        return word_w; --on a fail to fulfill conditions return the word width
+        operand_index := operand_table(instruction_format, operand);
+        return slv(operand_index downto operand_index-(operand_width(operand)-1));
     end function AddressIndex;
-    
-    ---- NO NEED TO EDIT THESE FUNCTIONS ----
-    -- convert from binary (std_logic_vector) to opcode
-    --  convert binary to integer and use it to index opcodes table
+
+    --convert from binary (std_logic_vector) to opcode
+    -- convert binary to integer and use it to index opcodes table
     function slv2op (slv: in std_logic_vector) return opcodes is
     begin
         return opcodes'val(to_integer(unsigned(slv)));
     end function slv2op;
 
-    -- convert from opcode to binary (std_logic_vector)
-    --  get the index of the given opcode and convert to binary
+    --convert from opcode to binary (std_logic_vector)
+    -- get the index of the given opcode and convert to binary
     function op2slv (op : in opcodes) return std_logic_vector is
     begin
         return std_logic_vector(to_unsigned(opcodes'pos(op), op_w));
