@@ -49,19 +49,13 @@ package pomegranate_inst_conf is
 --FUNCTIONS                                                 --
 --==========================================================--
 
-    --INSTRUCTION FORMAT CHECK FUNCTIONS
+    ---- FORMAT CHECK FUNCTIONS ----
+    -- these functions determine which instructions are in which format
+    -- these functions must be synthesisable as they will be used in control unit logic
 
-    -- register format check
+    -- example register format check
     function RFormatCheck (op: in opcodes) return std_logic;
-
-    -- branch format check
-    function BFormatCheck (op: in opcodes) return std_logic;
-
-    -- load format check
-    function LFormatCheck (op: in opcodes) return std_logic;
-
-    -- store format check
-    function SFormatCheck (op: in opcodes) return std_logic;
+    -- add other format checks here...
 
     --OPCODE FUNCTIONS
     
@@ -100,7 +94,7 @@ package body pomegranate_inst_conf is
     -- these functions determine which instructions are in which format
     -- these functions must be synthesisable as they will be used in control unit logic
 
-    -- example register format check...
+    -- example register format check
     function RFormatCheck (op: in opcodes) return std_logic is
     begin
         case op2slv(op) is
