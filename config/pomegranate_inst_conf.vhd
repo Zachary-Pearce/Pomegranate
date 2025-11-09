@@ -123,7 +123,7 @@ package body pomegranate_inst_conf is
     begin
         operand_index := operand_table(instruction_format, operand);
         return slv(operand_index downto operand_index-(operand_width(operand)-1));
-    end function AddressIndex;
+    end function GetOperand;
 
     --convert from binary (std_logic_vector) to opcode
     -- convert binary to integer and use it to index opcodes table
